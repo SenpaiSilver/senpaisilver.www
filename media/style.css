@@ -1,0 +1,172 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+
+body {
+	font-family: 'Titillium Web', sans-serif;
+	margin: 5px;
+	padding: 5px;
+	
+	background: url("./pic/background.png");
+	
+	color: #FFFFFF;
+}
+h1 {
+	padding-left: 25px
+}
+a {
+	color: #000000;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+/* Menu */
+.material-menu {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	
+	width: 250px;
+	height: 100%;
+	
+	box-shadow: 0px 0px 10px #888888;
+	
+	background: #FFFFFF;
+}
+.material-menu .header {
+	height: 150px;
+	width: 250px;
+	background: url("./pic/profile_background.png");
+	
+	position: relative;
+	top: 0px;
+	left: 0px;
+	
+	margin-bottom: 10px;
+}
+.header .title {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	margin: 0px;
+	
+	padding-left: 15px;
+	padding-right: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+	background: #888888;
+	
+	width: 235px;
+}
+.material-menu .profile-picture {
+	background: url("./pic/profile.png");
+	width: 80px;
+	height: 80px;
+	border: 2px solid #FFFFFF;
+	border-radius: 80px;
+	
+	top: 15px;
+	left: 15px;
+	position: absolute;
+}
+.material-menu ul {
+	padding-left: 0px;
+	margin-top: -10px;
+}
+li.material-menuitems a {
+	height: 32px;
+	line-height: 32px;
+	display: block;
+	padding-left: 60px;
+	font-weight: 300;
+}
+li.material-menuitems:hover {
+	background: #C0C0C0;
+}
+.material-menu li.blog {
+	background: url("./pic/menu/blog.png") no-repeat  15px 50% transparent;
+}
+.material-menu li.blog:hover {
+	background: url("./pic/menu/blog.png") no-repeat  15px 50% #C0C0C0;
+}
+.material-menu li.github {
+	background: url("./pic/menu/github.png") no-repeat  15px 50% transparent;
+}
+.material-menu li.github:hover {
+	background: url("./pic/menu/github.png") no-repeat  15px 50% #C0C0C0;
+}
+.material-menu li.steam {
+	background: url("./pic/menu/steam.png") no-repeat  15px 50% transparent;
+}
+.material-menu li.steam:hover {
+	background: url("./pic/menu/steam.png") no-repeat  15px 50% #C0C0C0;
+}
+.material-menu li.googlep {
+	background: url("./pic/menu/google.png") no-repeat  15px 50% transparent;
+}
+.material-menu li.googlep:hover {
+	background: url("./pic/menu/google.png") no-repeat  15px 50% #C0C0C0;
+}
+.material-menu li.twitter {
+	background: url("./pic/menu/twitter.png") no-repeat  15px 50% transparent;
+}
+.material-menu li.twitter:hover {
+	background: url("./pic/menu/twitter.png") no-repeat  15px 50% #C0C0C0;
+}
+.material-menu li.youtube {
+	background: url("./pic/menu/youtube.png") no-repeat  15px 50% transparent;
+}
+.material-menu li.youtube:hover {
+	background: url("./pic/menu/youtube.png") no-repeat  15px 50% #C0C0C0;
+}
+/* Mainpage */
+.material-mainpage {
+	position: absolute;
+	top: 0px;
+	left: 250px;
+}
+.material-mainpage ul {
+	list-style: none;
+}
+.card {
+	float: left;
+	
+	width: 350px;
+	height: 350px;
+	
+	overflow: hidden;
+	margin: 5px;
+	box-shadow: 0px 0px 3px #888888;
+}
+
+li.card a {
+	color: #FFFFFF;
+	background: #000000;
+	
+	padding-right: 0px;
+	padding-left: 0px;
+	
+	display: block;
+	height: 350px;
+	position: relative;
+	bottom: 0px;
+}
+
+li.card span {
+	color: #FFFFFF;
+	background: #000000;
+	display: block;
+	
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+li.artifacthunter a {
+	background: url("./pic/cards/artifacthunter.png");
+}
+li.fov a {
+	background: url("./pic/cards/fovcomparator.png") 0px 0px;
+}
+li.fov:hover a {
+	background: url("./pic/cards/fovcomparator.png") 0px 350px;
+}
