@@ -23,6 +23,7 @@
 				<li class="material-menuitems googlep"><a href="https://plus.google.com/+SenpaiSilver/about">Google+</a></li>
 				<li class="material-menuitems twitter"><a href="https://twitter.com/SenpaiSilver">Twitter</a></li>
 				<li class="material-menuitems youtube"><a href="https://youtube.com/SenpaiSilver">YouTube</a></li>
+				<li class="material-menuitems eveonline"><a href="https://secure.eveonline.com/trial/?invc=503fc3ad-0989-4589-a826-e4b786948803">EVE Online</a></li>
 			</ul>
 		</div>
 		<div class="material-mainpage">

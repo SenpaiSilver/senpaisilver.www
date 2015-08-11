@@ -119,6 +119,12 @@ li.material-menuitems:hover {
 .material-menu li.youtube:hover {
 	background: url("./pic/menu/youtube.png") no-repeat  15px 50% #C0C0C0;
 }
+.material-menu li.eveonline {
+	background: url("./pic/menu/eveonline.png") no-repeat  15px 50% transparent;
+}
+.material-menu li.eveonline:hover {
+	background: url("./pic/menu/eveonline.png") no-repeat  15px 50% #C0C0C0;
+}
 /* Mainpage */
 .material-mainpage {
 	position: absolute;
