@@ -4,19 +4,20 @@
 		'ngRoute'
 	])
 	.config(['$routeProvider',
-		function($routeProvider) {
+		'$locationProvider',
+		function($routeProvider, $locationProvider) {
 			$routeProvider.caseInsensitiveMatci = true;
 			$routeProvider
-			.when('/Showcase', {
+			.when('/Home', {
 					templateUrl: './partials/showcase.html',
 					controller: 'showcaseController'
 			})
 			.when('/TumblingDown', {
-				redirectTo: '/Showcase'
+				redirectTo: '/Home'
 			})
 			.otherwise({
-				redirectTo: '/Showcase'
+				redirectTo: '/Home'
 			});
-			//$locationProvider.html5mode(true);
+			//$locationProvider.html5Mode(true);
 		}]);
 })();

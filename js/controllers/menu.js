@@ -4,6 +4,7 @@
 		.module('app.menu', [])
 		.controller('menuController', function ($scope) {
 			$scope.menuElements = [
+				//{url: '#/Home', text: 'Home', icon: 'home'},
 				{url: 'http://blog.senpaisilver.com', text: 'Blog', icon: 'blog'},
 				{url: 'https://github.com/SenpaiSilver/', text: 'GitHub', icon: 'github'},
 				{url: 'http://steamcommunity.com/id/senpaisilver/', text: 'Steam', icon: 'steam'},
