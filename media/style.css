@@ -57,7 +57,7 @@ a:hover {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	
-	background: #888888;
+	background: #000000;
 	
 	width: 235px;
 }
@@ -76,57 +76,22 @@ a:hover {
 	padding-left: 0px;
 	margin-top: -10px;
 }
-li.material-menuitems a {
+li.material-menuitems {
 	height: 32px;
 	line-height: 32px;
 	display: block;
-	padding-left: 60px;
+	padding: 0px;
 	font-weight: 300;
 }
-li.material-menuitems:hover {
+.material-menu img {
+	vertical-align: middle;
+	padding: 0px 10px;
+}
+.material-menu li {
+	background: transparent;
+}
+.material-menu li:hover {
 	background: #C0C0C0;
-}
-.material-menu li.blog {
-	background: url("./pic/menu/blog.png") no-repeat  15px 50% transparent;
-}
-.material-menu li.blog:hover {
-	background: url("./pic/menu/blog.png") no-repeat  15px 50% #C0C0C0;
-}
-.material-menu li.github {
-	background: url("./pic/menu/github.png") no-repeat  15px 50% transparent;
-}
-.material-menu li.github:hover {
-	background: url("./pic/menu/github.png") no-repeat  15px 50% #C0C0C0;
-}
-.material-menu li.steam {
-	background: url("./pic/menu/steam.png") no-repeat  15px 50% transparent;
-}
-.material-menu li.steam:hover {
-	background: url("./pic/menu/steam.png") no-repeat  15px 50% #C0C0C0;
-}
-.material-menu li.googlep {
-	background: url("./pic/menu/google.png") no-repeat  15px 50% transparent;
-}
-.material-menu li.googlep:hover {
-	background: url("./pic/menu/google.png") no-repeat  15px 50% #C0C0C0;
-}
-.material-menu li.twitter {
-	background: url("./pic/menu/twitter.png") no-repeat  15px 50% transparent;
-}
-.material-menu li.twitter:hover {
-	background: url("./pic/menu/twitter.png") no-repeat  15px 50% #C0C0C0;
-}
-.material-menu li.youtube {
-	background: url("./pic/menu/youtube.png") no-repeat  15px 50% transparent;
-}
-.material-menu li.youtube:hover {
-	background: url("./pic/menu/youtube.png") no-repeat  15px 50% #C0C0C0;
-}
-.material-menu li.eveonline {
-	background: url("./pic/menu/eveonline.png") no-repeat  15px 50% transparent;
-}
-.material-menu li.eveonline:hover {
-	background: url("./pic/menu/eveonline.png") no-repeat  15px 50% #C0C0C0;
 }
 /* Mainpage */
 .material-mainpage {
@@ -173,9 +138,6 @@ li.card span {
 li.artifacthunter a {
 	background: url("./pic/cards/artifacthunter.png");
 }
-li.fov a {
-	background: url("./pic/cards/fovcomparator.png") 0px 0px;
-}
-li.fov:hover a {
-	background: url("./pic/cards/fovcomparator.png") 0px 350px;
+li.fovcomparator a {
+	background: url("./pic/cards/fovcomparator.png");
 }

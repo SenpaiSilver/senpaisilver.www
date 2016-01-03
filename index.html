@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html ng-app="app">
+	<head>
+		<title>SenpaiSilver</title>
+		<meta charset="UTF-8" />
+		
+		<link rel="stylesheet"  href="./media/style.css" />
+		
+		<script src="./node_modules/angular/angular.min.js"></script>
+		<script src="./node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+		<script src="./node_modules/angular-route/angular-route.min.js"></script>
+		
+		<script src="./js/end_of_evangelion.js"></script>
+		
+		<meta name="viewport" content="width=700, user-scalable=0" />
+	</head>
+	<body>
+		<div class="material-menu">
+			<div class="header">
+				<div class="profile-picture"></div>
+				<div class="title">
+					SenpaiSilver
+				</div>
+			</div>
+			<nav ng-controller="menuController">
+					<ul class="material-menuitems">
+						<li class="material-menuitems" ng-repeat="menu in menuElements"><a href="{{menu.url}}"><img ng-src="./media/pic/menu/{{menu.icon}}.png"/>{{menu.text}}</a></li>
+					</ul>
+		</nav>
+		</div>
+		<div class="material-mainpage">
+			<div ng-view></div>
+		</div>
+		<script src="./js/app.js"></script>
+		<script src="./js/directives.js"></script>
+		
+		<script src="./js/routes.js"></script>
+		
+		<script src="./js/controllers/menu.js"></script>
+		<script src="./js/controllers/showcase.js"></script>
+	</body>
+</html>
