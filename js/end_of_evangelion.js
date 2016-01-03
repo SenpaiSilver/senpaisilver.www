@@ -17,7 +17,7 @@ var WinterFlake = {
 	run: function(opts) {
 		var canvas, gl, buffer, key;
 		
-		localStorage.removeItem('tumblingdown-tmp-toggle');
+		localStorage.setItem('tumblingdown-tmp-toggle', 'startcross');
 		this.opts = {
 			src: window.xImgB64,
 			minCount: 40,
@@ -351,7 +351,7 @@ function initWF() {
 	
 	try {
 		flag = localStorage.getItem('tumblingdown-tmp-toggle');
-		if (!flag || flag !== 'stopcross') {
+		if (flag === 'startcross') {
 			toggleCrosses.call(el);
 		}
 	}

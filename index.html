@@ -23,9 +23,10 @@
 				</div>
 			</div>
 			<nav ng-controller="menuController">
-					<ul class="material-menuitems">
-						<li class="material-menuitems" ng-repeat="menu in menuElements"><a href="{{menu.url}}"><img ng-src="./media/pic/menu/{{menu.icon}}.png"/>{{menu.text}}</a></li>
-					</ul>
+				<ul class="material-menuitems">
+					<li class="material-menuitems" ng-repeat="menu in menuElements"><a href="{{menu.url}}"><img ng-src="./media/pic/menu/{{menu.icon}}.png"/>{{menu.text}}</a></li>
+					<li class="material-menuitems" ng-repeat="toggle in toggleElements"><a ng-click="$emit('{{toggle.toggle}}')"><img ng-src="./media/pic/menu/{{toggle.icon}}.png"/>{{toggle.text}}</a></li>
+				</ul>
 		</nav>
 		</div>
 		<div class="material-mainpage">

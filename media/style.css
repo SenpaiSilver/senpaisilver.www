@@ -106,13 +106,12 @@ li.material-menuitems {
 	float: left;
 	
 	width: 350px;
-	height: 350px;
+	height: 320px;
 	
 	overflow: hidden;
 	margin: 5px;
 	box-shadow: 0px 0px 3px #888888;
 }
-
 li.card a {
 	color: #FFFFFF;
 	background: #000000;
@@ -128,16 +127,11 @@ li.card a {
 
 li.card span {
 	color: #FFFFFF;
-	background: #000000;
 	display: block;
 	
 	padding-right: 5px;
 	padding-left: 5px;
 }
-
-li.artifacthunter a {
-	background: url("./pic/cards/artifacthunter.png");
-}
-li.fovcomparator a {
-	background: url("./pic/cards/fovcomparator.png");
+li.card img {
+	background: #000000;
 }
