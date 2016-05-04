@@ -6,9 +6,9 @@
 		{"name": "SenpaiSilver"}
 	],
 	"dependencies": {
-		"angular": "1.4.x",
-		"angular-route": "1.4.x",
-		"angular-sanitize": "1.4.x",
+		"angular": "1.5.x",
+		"angular-route": "1.5.x",
+		"angular-sanitize": "1.5.x",
 		"http-server": "^0.8.5",
 		"live-server": "*"
 	},

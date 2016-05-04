@@ -9,7 +9,7 @@
 			$routeProvider.caseInsensitiveMatci = true;
 			$routeProvider
 			.when('/Home', {
-					templateUrl: './partials/showcase.html',
+					templateUrl: 'js/showcase/partials/showcase.html',
 					controller: 'showcaseController'
 			})
 			.when('/TumblingDown', {
