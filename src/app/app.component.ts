@@ -13,8 +13,8 @@ export class AppComponent {
     new Links('Steam', 'http://steamcommunity.com/id/senpaisilver/', 'steam'),
     // new Links('Google+', 'https://plus.google.com/+SenpaiSilver/about', 'google'),
     new Links('Twitter', 'https://twitter.com/SenpaiSilver', 'twitter'),
-    new Links('YouTube', 'https://youtube.com/SenpaiSilver', 'youtube')
-    // new Links('EVE Online', 'http://secure.eveonline.com/signup/?invc=503fc3ad-0989-4589-a826-e4b786948803&action=buddy')
+    new Links('YouTube', 'https://youtube.com/SenpaiSilver', 'youtube'),
+    new Links('EVE Online', 'http://secure.eveonline.com/signup/?invc=503fc3ad-0989-4589-a826-e4b786948803&action=buddy')
   ];
 }
 
