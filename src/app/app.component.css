@@ -1,18 +1,20 @@
 ul.links {
 	list-style-image: none;
 	padding: 5px;
-	/*border: #FFF 1px solid;
-	width: 25vw;*/
 }
 ul.links li {
 	display: block;
-	border: #FFF 1px solid;
+	border: #303030 1px solid;
 	width: 150px;
 	height: 150px;
 	float: left;
 	margin: 5px;
 }
 ul.links li a {
+	display: block;
+	height: 100%;
+}
+ul.links li a span {
 	background: #303030;
 	width: 140;
 	display: block;

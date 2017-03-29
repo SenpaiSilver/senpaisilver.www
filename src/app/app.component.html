@@ -1,6 +1,8 @@
 <ul class="links">
   <li *ngFor='let link of links'>
-    <a href='{{link.href}}'>{{link.title}}</a>
+    <a href='{{link.href}}'>
+      <span>{{link.title}}</span>
+    </a>
   </li>
 </ul>
 
