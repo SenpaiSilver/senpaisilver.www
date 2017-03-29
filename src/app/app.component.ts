@@ -8,13 +8,13 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   links = [
-    new Links('Blog', 'http://blog.senpaisilver.com'),
-    new Links('GitHub', 'https://github.com/SenpaiSilver'),
-    new Links('Steam', 'http://steamcommunity.com/id/senpaisilver/'),
-    new Links('Google+', 'https://plus.google.com/+SenpaiSilver/about'),
-    new Links('Twitter', 'https://twitter.com/SenpaiSilver'),
-    new Links('YouTube', 'https://youtube.com/SenpaiSilver'),
-    new Links('EVE Online', 'http://secure.eveonline.com/signup/?invc=503fc3ad-0989-4589-a826-e4b786948803&action=buddy')
+    new Links('Blog', 'http://blog.senpaisilver.com', 'blog'),
+    new Links('GitHub', 'https://github.com/SenpaiSilver', 'github'),
+    new Links('Steam', 'http://steamcommunity.com/id/senpaisilver/', 'steam'),
+    // new Links('Google+', 'https://plus.google.com/+SenpaiSilver/about', 'google'),
+    new Links('Twitter', 'https://twitter.com/SenpaiSilver', 'twitter'),
+    new Links('YouTube', 'https://youtube.com/SenpaiSilver', 'youtube')
+    // new Links('EVE Online', 'http://secure.eveonline.com/signup/?invc=503fc3ad-0989-4589-a826-e4b786948803&action=buddy')
   ];
 }
 
