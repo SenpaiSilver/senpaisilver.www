@@ -1,5 +1,5 @@
 ul.links {
-	list-style-image: none;
+  list-style: none;
 	padding: 5px;
 	display: flex;
 	flex-wrap: wrap;
@@ -21,10 +21,12 @@ ul.links li a {
 }
 ul.links li a span {
 	background: #303030;
-	width: 140;
+	width: 140px;
 	display: block;
 	padding: 5px;
-	overflow-x: hidden;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: clip;
 	position: relative;
 	top: 110px;
 }
