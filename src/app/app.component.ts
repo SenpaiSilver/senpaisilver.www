@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   links = [
-    new Links('Blog', 'http://blog.senpaisilver.com', 'blog'),
+    new Links('Blog', 'https://blog.senpaisilver.com', 'blog'),
     new Links('GitHub', 'https://github.com/SenpaiSilver', 'github'),
     new Links('Steam', 'http://steamcommunity.com/id/senpaisilver/', 'steam'),
     // new Links('Google+', 'https://plus.google.com/+SenpaiSilver/about', 'google'),
