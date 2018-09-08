@@ -1,6 +1,7 @@
 <section class="home">
     <ul class="badges">
         <?php foreach ($badges_url as $title => $url): ?>
+
         <li>
             <?php
                 $background = "bg";
