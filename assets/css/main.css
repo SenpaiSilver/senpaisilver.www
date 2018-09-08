@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Source Code Pro', monospace;
+}
+a, a:active, a:visited {
+    color: #fff;
+}
+section.home ul.badges {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0px;
+    margin: 10px;
+}
+section.home ul.badges li a {
+    display: block;
+    border: 1px solid #303030;
+    width: 150px;
+    height: 150px;
+    background: url("../img/none.png");
+    text-decoration: none;
+}
+section.home ul.badges li a:hover {
+    border: 1px solid #404040;
+}
+section.home ul.badges li span {
+    display: block;
+    background: #303030;
+    color: #fff;
+    text-overflow: clip;
+    line-height: 24px;
+    position: relative;
+    top: 120px;
+    width: 100%;
+    padding: 2px;
+}
+section.home ul.badges li img {
+    border: none;
+    z-index: 0;
+}
+section.home ul.badges li a.bg         { background: url("../img/none.png"); }
+section.home ul.badges li a.bg-blog    { background: url("../img/blog.png"); }
+section.home ul.badges li a.bg-youtube { background: url("../img/youtube.png"); }
+section.home ul.badges li a.bg-twitter { background: url("../img/twitter.png"); }
+section.home ul.badges li a.bg-steam   { background: url("../img/steam.png"); }
+section.home ul.badges li a.bg-github  { background: url("../img/github.png"); }
