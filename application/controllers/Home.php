@@ -17,6 +17,15 @@ class Home extends MY_Controller
 			"GitHub"  => "https://github.com/SenpaiSilver",
 			"Steam"   => "http://steamcommunity.com/id/senpaisilver/",
 		];
+		$this->_data["timeline"] = $this->twitter->get_user_timeline([
+			"screen_name"     => "SenpaiSilver",
+			"count"           => 16,
+			"exclude_replies" => true,
+			"include_rts"     => true,
+		]);
+		$this->_data["blog"] = $this->blog->get_feed([
+			"per_page" => 8,
+		]);
 
 		$this->load->view('base/head', $this->_data);
 		$this->load->view('home/index', $this->_data);

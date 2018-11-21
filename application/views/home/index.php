@@ -1,21 +1,30 @@
 <section class="home">
-    <ul class="badges">
-        <?php foreach ($badges_url as $title => $url): ?>
 
+    <ul class="twitter">
+    <?php foreach ($timeline as $t): ?>
         <li>
-            <?php
-                $background = "bg";
-
-                if (file_exists(FCPATH."/assets/img/".strtolower($title).".png"))
-                {
-                    $background .= "-".strtolower($title);
-                }
-            ?>
-
-            <a href="<?=$url?>" class="<?=$background?>">
-                <span><?=$title?></span>
-            </a>
+            <p><?=$t->text_html?></p>
+            <a href="<?=$t->link?>" rel="nofollow">Link</a>
+            <span class="icon twitter"></span>
         </li>
-        <?php endforeach; ?>
+    <?php endforeach; ?>
     </ul>
+
+    <ul class="blog">
+    <?php foreach ($blog as $b): ?>
+        <li>
+            <span class="icon newspaper"><a href="<?=$b->link?>"><?=$b->title->rendered?></a></span>
+            <?=$b->excerpt->rendered?>
+            <a href="<?=$b->link?>">Read more</a>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+
+    <!-- <?php var_dump($timeline); ?> -->
+    <!-- <?php var_dump($blog); ?> -->
+
+    <?php $this->load->view("base/menu"); ?>
+
+    <?php /*$this->load->view("home/partial_twitter");*/ ?>
+
 </section>
