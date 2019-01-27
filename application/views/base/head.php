@@ -15,3 +15,4 @@
 <nav>
     <?php $this->load->view("base/menu"); ?>
 </nav>
+<main>

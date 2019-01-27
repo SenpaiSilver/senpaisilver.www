@@ -10,6 +10,14 @@ body {
 a, a:active, a:visited {
     color: #fff;
 }
+main {
+    border: 3px #f00 solid;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px 0px;
+    width: 100%;
+    display: block;
+}
 footer {
     text-align: center;
 }
@@ -23,7 +31,6 @@ nav ul.menu {
     display: flex;
 
     align-items: flex-start;
-    position: fixed;
 }
 nav ul.menu li {
     background: #f00;

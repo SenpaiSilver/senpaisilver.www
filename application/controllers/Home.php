@@ -10,13 +10,6 @@ class Home extends MY_Controller
 
 	public function index()
 	{
-		// $this->_data["badges_url"] = [
-		// 	"Blog"    => (object) ["icon" => "", "url" => "https://blog.senpaisilver.com/"],
-		// 	"Twitter" => (object) ["icon" => "", "url" => "https://twitter.com/SenpaiSilver"],
-		// 	"YouTube" => (object) ["icon" => "", "url" => "https://youtube.com/SenpaiSilver"],
-		// 	"GitHub"  => (object) ["icon" => "", "url" => "https://github.com/SenpaiSilver"],
-		// 	"Steam"   => (object) ["icon" => "", "url" => "http://steamcommunity.com/id/senpaisilver/"],
-		// ];
 		$this->_data["timeline"] = $this->twitter->get_user_timeline([
 			"screen_name"     => "SenpaiSilver",
 			"count"           => 16,
