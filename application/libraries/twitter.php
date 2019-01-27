@@ -15,9 +15,10 @@ class Twitter
     public function __construct()
     {
         $this->_CI = get_instance();
+        $this->_CI->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
         $this->_access = $this->_CI->config->item("twitter_access")?? "";
         $this->_secret = $this->_CI->config->item("twitter_secret")?? "";
-        $this->_token = $this->_CI->cache->get("twitter_token");
+        $this->_token  = $this->_CI->cache->get("twitter_token");
 
         $this->_headers = [
             "User-Agent: senpaisilver.com Twitter feed",

@@ -10,13 +10,13 @@ class Home extends MY_Controller
 
 	public function index()
 	{
-		$this->_data["badges_url"] = [
-			"Blog"    => "https://blog.senpaisilver.com/",
-			"Twitter" => "https://twitter.com/SenpaiSilver",
-			"YouTube" => "https://youtube.com/SenpaiSilver",
-			"GitHub"  => "https://github.com/SenpaiSilver",
-			"Steam"   => "http://steamcommunity.com/id/senpaisilver/",
-		];
+		// $this->_data["badges_url"] = [
+		// 	"Blog"    => (object) ["icon" => "", "url" => "https://blog.senpaisilver.com/"],
+		// 	"Twitter" => (object) ["icon" => "", "url" => "https://twitter.com/SenpaiSilver"],
+		// 	"YouTube" => (object) ["icon" => "", "url" => "https://youtube.com/SenpaiSilver"],
+		// 	"GitHub"  => (object) ["icon" => "", "url" => "https://github.com/SenpaiSilver"],
+		// 	"Steam"   => (object) ["icon" => "", "url" => "http://steamcommunity.com/id/senpaisilver/"],
+		// ];
 		$this->_data["timeline"] = $this->twitter->get_user_timeline([
 			"screen_name"     => "SenpaiSilver",
 			"count"           => 16,
@@ -26,6 +26,8 @@ class Home extends MY_Controller
 		$this->_data["blog"] = $this->blog->get_feed([
 			"per_page" => 8,
 		]);
+
+		$this->_data["youtube"] = $this->youtube->get_latest_uploads();
 
 		$this->load->view('base/head', $this->_data);
 		$this->load->view('home/index', $this->_data);

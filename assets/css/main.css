@@ -5,6 +5,7 @@ body {
     background: #000;
     color: #fff;
     font-family: 'Source Code Pro', monospace;
+    margin: 0px;
 }
 a, a:active, a:visited {
     color: #fff;
@@ -12,6 +13,35 @@ a, a:active, a:visited {
 footer {
     text-align: center;
 }
+/**
+*** Nav
+**/
+nav ul.menu {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+
+    align-items: flex-start;
+    position: fixed;
+}
+nav ul.menu li {
+    background: #f00;
+}
+nav ul.menu li:hover {
+    background: #00f;
+}
+nav ul.menu li:last-child {
+    border-bottom-right-radius: 10px;
+}
+nav a {
+    text-decoration: none;
+    padding: 5px;
+    line-height: 32px;
+}
+/**
+*** Content
+**/
 ul.twitter,
 ul.blog {
     list-style: none;

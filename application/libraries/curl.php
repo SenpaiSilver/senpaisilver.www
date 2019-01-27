@@ -6,7 +6,7 @@ class Curl
     private $_CI;
     private $_ch = null;
     private $_lastcode = -1;
-    private $_useragent = "CodeIgniter Twitter Library";
+    private $_useragent = "CodeIgniter Curl Library";
 
     public function __construct()
     {
@@ -16,7 +16,8 @@ class Curl
         curl_setopt_array($this->_ch, [
             CURLOPT_USERAGENT      => $this->_useragent,
             CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_SSL_VERIFYPEER => 1,
+            CURLOPT_SSL_VERIFYPEER => 0,
+            // CURLOPT_SSL_VERIFYPEER => 1,
             // CURLOPT_SSL_VERIFYHOST => 2,
             // CURLOPT_CAINFO         => "https://api.twitter.com",
         ]);

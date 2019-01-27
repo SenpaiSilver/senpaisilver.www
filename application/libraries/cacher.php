@@ -11,12 +11,4 @@ class Cacher
         $this->_CI->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
         $this->_driver = &$this->_CI->cache;
     }
-
-    public function get()
-    {
-    }
-
-    public function save()
-    {
-    }
 }
