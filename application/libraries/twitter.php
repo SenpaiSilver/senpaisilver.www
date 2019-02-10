@@ -47,27 +47,63 @@ class Twitter
 
         foreach ($data as &$d)
         {
-            $d->text_html = preg_replace('#\s+https?://t.co/[a-z0-9]+$#i', '', $d->text);
-            $d->text_html = htmlentities($d->text_html);
-            $d->link = "https://twitter.com/".urlencode(property_exists($d, "retweeted_status") ? $d->retweeted_status->user->screen_name : $d->user->screen_name)."/status/".$d->id;
+            $tweet = new stdClass();
+
+            $tweet->text_html = preg_replace('#\s+https?://t.co/[a-z0-9]+$#i', '', $d->text);
+            $tweet->text_html = htmlentities($tweet->text_html);
+            $tweet->link = "https://twitter.com/".urlencode(property_exists($d, "retweeted_status") ? $d->retweeted_status->user->screen_name : $d->user->screen_name)."/status/".$d->id;
+
+            $tweet->datetime = $d->created_at;
+            $tweet->author = (object) [
+                "name"        => $d->user->name,
+                "screen_name" => $d->user->screen_name,
+                "location"    => $d->user->location,
+                "description" => $d->user->description,
+                "created"     => $d->user->created_at,
+                "profile"     => (object) [
+                    "picture"    => str_replace("_normal.jpg", ".jpg", $d->user->profile_image_url_https),
+                    "background" => $d->user->profile_background_image_url_https,
+                ],
+            ]; // user
+            $tweet->media = []; // entities->media[]->media_url_https
 
             foreach ($d->entities->user_mentions as $user)
             {
-                $d->text_html = str_replace("@".$user->screen_name, '<a href="https://twitter.com/'.urlencode($user->screen_name).'">@'.htmlentities($user->screen_name).'</a>', $d->text_html);
-                $d->text_html = htmlspecialchars_decode($d->text_html);
+                $tweet->text_html = str_replace("@".$user->screen_name, '<a href="https://twitter.com/'.urlencode($user->screen_name).'">@'.htmlentities($user->screen_name).'</a>', $tweet->text_html);
+                $tweet->text_html = htmlspecialchars_decode($tweet->text_html);
             }
             foreach ($d->entities->hashtags as $hashtag)
             {
-                $d->text_html = str_replace("#".$hashtag->text, '<a href="https://twitter.com/hashtag/'.urlencode($hashtag->text).'">#'.htmlentities($hashtag->text).'</a>', $d->text_html);
+                $tweet->text_html = str_replace("#".$hashtag->text, '<a href="https://twitter.com/hashtag/'.urlencode($hashtag->text).'">#'.htmlentities($hashtag->text).'</a>', $tweet->text_html);
             }
             foreach ($d->entities->urls as $url)
             {
-                $d->text_html = str_replace($url->url, '<a href="'.$url->expanded_url.'">'.$url->expanded_url.'</a>', $d->text_html);
+                $tweet->text_html = str_replace($url->url, '<a href="'.$url->expanded_url.'">'.$url->expanded_url.'</a>', $tweet->text_html);
             }
+
             if (property_exists($d->entities, "media")) foreach ($d->entities->media as $media)
             {
-                $d->text_html = str_replace($media->url, '<a href="'.$media->expanded_url.'">'.$media->expanded_url.'</a>', $d->text_html);
+                $tweet->text_html = str_replace($media->url, '<a href="'.$media->expanded_url.'">'.$media->expanded_url.'</a>', $tweet->text_html);
             }
+
+            if (property_exists($d, "retweeted_status"))
+            {
+                $tweet->author = (object) [
+                    "name"        => $d->retweeted_status->user->name,
+                    "screen_name" => $d->retweeted_status->user->screen_name,
+                    "location"    => $d->retweeted_status->user->location,
+                    "description" => $d->retweeted_status->user->description,
+                    "created"     => $d->retweeted_status->user->created_at,
+                    "profile"     => (object) [
+                        "picture"    => str_replace("_normal.jpg", ".jpg", $d->retweeted_status->user->profile_image_url_https),
+                        "background" => $d->retweeted_status->user->profile_background_image_url_https,
+                    ],
+                ];
+            }
+
+            // var_dump($d);
+            // var_dump($tweet,0);
+            $d = $tweet;
         }
         $this->_CI->cache->save($hash, $data, 300);
         return ($data);

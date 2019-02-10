@@ -9,6 +9,8 @@
     <link href="/assets/css/fonts.css" rel="stylesheet"/>
     <link href="/assets/css/particles.css" rel="stylesheet"/>
     <link href="/assets/css/main.css" rel="stylesheet"/>
+    <link href="/assets/css/responsive.css" rel="stylesheet"/>
+    <link href="/assets/css/twitter.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="particles-js"></div>
