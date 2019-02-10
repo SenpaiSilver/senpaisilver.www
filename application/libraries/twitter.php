@@ -54,6 +54,7 @@ class Twitter
             foreach ($d->entities->user_mentions as $user)
             {
                 $d->text_html = str_replace("@".$user->screen_name, '<a href="https://twitter.com/'.urlencode($user->screen_name).'">@'.htmlentities($user->screen_name).'</a>', $d->text_html);
+                $d->text_html = htmlspecialchars_decode($d->text_html);
             }
             foreach ($d->entities->hashtags as $hashtag)
             {

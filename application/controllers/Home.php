@@ -12,12 +12,12 @@ class Home extends MY_Controller
 	{
 		$this->_data["timeline"] = $this->twitter->get_user_timeline([
 			"screen_name"     => "SenpaiSilver",
-			"count"           => 16,
+			"count"           => 8,
 			"exclude_replies" => true,
 			"include_rts"     => true,
 		]);
 		$this->_data["blog"] = $this->blog->get_feed([
-			"per_page" => 8,
+			"per_page" => 5,
 		]);
 
 		$this->_data["youtube"] = $this->youtube->get_latest_uploads();

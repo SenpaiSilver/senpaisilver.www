@@ -14,11 +14,13 @@
 <div id="particles-js"></div>
 
 <nav>
-    <a href="<?=base_url()?>" class="home">
-        <!-- <span class="icon home"></span> SenpaiSilver -->
-        SenpaiSilver
-    </a>
-    <?php $this->load->view("base/menu"); ?>
+    <div class="container">
+        <a href="<?=base_url()?>" class="home">
+            <!-- <span class="icon home"></span> SenpaiSilver -->
+            SenpaiSilver
+        </a>
+        <?php $this->load->view("base/menu"); ?>
+    </div>
 </nav>
 
 <main>

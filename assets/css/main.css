@@ -11,7 +11,7 @@ a, a:active, a:visited {
     color: #fff;
 }
 main {
-    border: 3px #f00 solid;
+    /* border: 3px #f00 solid; */
     /* border-radius: 15px; */
     padding: 10px;
     margin: 20px 50px;
@@ -50,7 +50,6 @@ nav ul.menu li a {
 }
 nav ul.menu li:hover a {
     color: rgb(224, 56, 56);
-    transition: color .2s;
 }
 nav ul.menu li:first-child:hover {
     border-top-left-radius: 5px;
@@ -61,7 +60,12 @@ nav ul.menu li:last-child:hover {
     border-bottom-right-radius: 5px;
 }
 nav ul.menu li:last-child {
-    border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+nav ul.menu li:first-child {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }
 nav a {
     text-decoration: none;
@@ -123,4 +127,75 @@ ul.blog span.newspaper a {
 ul.blog p {
     justify-content: space-between;
     text-align: justify;
+}
+article p {
+    justify-content: space-between;
+    text-align: justify;
+}
+/**
+ * Section
+ */
+
+section.blog {
+    width: 70%;
+    float: left;
+    max-width: 900px;
+}
+section.blog ul {
+    padding: 0px;
+    list-style: none;
+}
+section.blog ul li {
+    padding: 10px 10px;
+    margin-top: 35px;
+    background-color: black;
+    background-position: 50% 25%;
+    background-size: cover;
+    box-shadow: inset 0 0 20px #000;
+    transition: box-shadow 0.3s;
+}
+section.blog ul li:hover {
+    box-shadow: inset 0 0 10px #000;
+}
+section.blog ul .readmore {
+    width: 100%;
+    text-align: right;
+    display: block;
+    text-decoration: none;
+}
+section.blog article p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+section.blog a.title,
+section.blog ul .readmore a,
+section.blog article {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 2px 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+section.blog ul .readmore {
+    margin-top: 10px;
+}
+section.blog ul .readmore a {
+    /* border-top-left-radius: 10px; */
+    /* margin-right: -10px; */
+    /* position: relative; */
+    /* right: -5px; */
+    /* bottom: -5px; */
+}
+
+section.social {
+    width: 30%;
+    float: left;
+    max-width: 350px;
+}
+.container {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container:after {
+    clear: both;
 }
