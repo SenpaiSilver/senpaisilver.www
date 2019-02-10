@@ -23,15 +23,4 @@
         </ul>
     </section>
 </div>
-<!--
-<ul class="twitter">
-    <?php foreach ($timeline as $t): ?>
-        <li>
-            <p><?=$t->text_html?></p>
-            <a href="<?=$t->link?>" rel="nofollow">Link</a>
-            <span class="icon twitter"></span>
-        </li>
-    <?php endforeach; ?>
-</ul> -->
-<hr style="clear: both;"/>
-<?php var_dump($timeline); ?>
+<hr/>

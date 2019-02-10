@@ -1,4 +1,7 @@
 @media only screen and (max-width: 1300px) {
+    nav {
+        padding: 15px;
+    }
     main {
         margin: 20px 5px;
     }
@@ -12,12 +15,9 @@
     }
 }
 @media only screen and (max-width: 800px) {
-    /* body {
-        background-color: rgb(99, 57, 57);
-    } */
+    nav label {
+        display: none;
+    }
 }
 @media only screen and (max-width: 500px) {
-    /* body {
-        background-color: rgb(255, 160, 160);
-    } */
 }

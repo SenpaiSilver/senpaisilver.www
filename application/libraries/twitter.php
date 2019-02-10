@@ -57,6 +57,7 @@ class Twitter
             $tweet->author = (object) [
                 "name"        => $d->user->name,
                 "screen_name" => $d->user->screen_name,
+                "link"        => "https://twitter.com/".$d->user->screen_name,
                 "location"    => $d->user->location,
                 "description" => $d->user->description,
                 "created"     => $d->user->created_at,
@@ -81,9 +82,18 @@ class Twitter
                 $tweet->text_html = str_replace($url->url, '<a href="'.$url->expanded_url.'">'.$url->expanded_url.'</a>', $tweet->text_html);
             }
 
-            if (property_exists($d->entities, "media")) foreach ($d->entities->media as $media)
+            if (property_exists($d->entities, "media"))
             {
-                $tweet->text_html = str_replace($media->url, '<a href="'.$media->expanded_url.'">'.$media->expanded_url.'</a>', $tweet->text_html);
+                foreach ($d->entities->media as $media)
+                {
+                    $tweet->text_html = str_replace($media->url, '<a href="'.$media->expanded_url.'">'.$media->expanded_url.'</a>', $tweet->text_html);
+                    $tweet->media[] = (object) [
+                        "url"      => $media->media_url_https,
+                        "expanded" => $media->expanded_url,
+                        "type"     => $media->type,
+                        "sizes"    => $media->sizes,
+                    ];
+                }
             }
 
             if (property_exists($d, "retweeted_status"))
@@ -91,6 +101,7 @@ class Twitter
                 $tweet->author = (object) [
                     "name"        => $d->retweeted_status->user->name,
                     "screen_name" => $d->retweeted_status->user->screen_name,
+                    "link"        => "https://twitter.com/".$d->retweeted_status->user->screen_name,
                     "location"    => $d->retweeted_status->user->location,
                     "description" => $d->retweeted_status->user->description,
                     "created"     => $d->retweeted_status->user->created_at,
@@ -100,6 +111,8 @@ class Twitter
                     ],
                 ];
             }
+
+            $tweet->text_html = nl2br($tweet->text_html);
 
             // var_dump($d);
             // var_dump($tweet,0);

@@ -1,11 +1,22 @@
 <li>
-    <div>
-        <?=$text_html?>
+    <div class="flex-container">
+        <div class="profile">
+            <a href="<?=$author->link?>" class="user">
+                <img src="<?=$author->profile->picture?>" alt="<?=$author->name?>"/>
+            </a>
+
+            <!-- <a href="<?=$link?>" rel="nofollow" class="link">
+                <span class="icon twitter"></span>
+            </a> -->
+        </div>
+        <div class="tweet">
+            <?=$text_html?>
+            <!-- <div>
+                <a href="<?=$link?>" rel="nofollow"><span class="icon twitter"></span>Link</a>
+            </div> -->
+        </div>
     </div>
-    <div>
-        <a href="<?=$link?>" rel="nofollow"><span class="icon twitter"></span>Link</a>
+    <div class="link">
+        <a href="<?=$link?>" rel="nofollow"><?=$datetime?></a>
     </div>
 </li>
-
-<!-- <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/SenpaiSilver?ref_src=twsrc%5Etfw">Tweets by SenpaiSilver</a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->

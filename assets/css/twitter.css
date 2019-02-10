@@ -1,13 +1,62 @@
 section.social ul.twitter li:not(:last-child) {
-    border-bottom: 3px red solid;
+    border-bottom: 3px rgba(66, 66, 66, 0.5) solid;
+}
+section.social ul.twitter li:first-child {
+    margin-top: 35px;
 }
 section.social ul.twitter li {
     padding: 10px;
-    margin-top: 35px;
+    /* margin-top: 5px; */
+    background: rgba(0, 0, 0, 0.7);
+    /* display: flex; */
 }
-section.social ul.twitter li:nth-child(odd) {
-    background: rgb(160, 76, 76);
+
+section.social ul.twitter li .flex-container {
+    display: flex;
 }
-section.social ul.twitter li:nth-child(even) {
-    background: rgb(110, 110, 240);
+section.social ul.twitter li:hover {
+    background: rgba(66, 66, 66, 0.7);
+}
+section.social ul.twitter li:nth-child(odd) .flex-container {
+    flex-direction: row;
+}
+section.social ul.twitter li:nth-child(even) .flex-container {
+    flex-direction: row-reverse;
+}
+section.social ul.twitter li:nth-child(odd) .flex-container .profile {
+    padding-right: 10px;
+}
+section.social ul.twitter li:nth-child(even) .flex-container .profile {
+    padding-left: 10px;
+}
+section.social ul.twitter li:nth-child(odd) .flex-container {
+    text-align: left;
+}
+section.social ul.twitter li:nth-child(even) .flex-container {
+    text-align: right;
+}
+section.social ul.twitter li:nth-child(odd) .link {
+    text-align: left;
+}
+section.social ul.twitter li:nth-child(even) .link {
+    text-align: right;
+}
+section.social ul.twitter .tweet {
+    min-width: 200px;
+    /* justify-content: space-between;
+    text-align: justify; */
+}
+section.social ul.twitter .profile {
+    width: 60px;
+}
+section.social ul.twitter .profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+section.social ul.twitter .profile .link {
+    text-decoration: none;
+}
+section.social ul.twitter li .link a {
+    text-decoration: none;
 }
