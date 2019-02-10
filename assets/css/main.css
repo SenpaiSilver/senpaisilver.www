@@ -35,8 +35,8 @@ hr {
     clear: both;
 }
 /**
-*** Nav
-**/
+ * Nav
+ */
 nav {
     text-align: left;
     background: rgba(0, 0, 0, 0.5);
@@ -88,8 +88,8 @@ nav a {
     line-height: 32px;
 }
 /**
-*** Content
-**/
+ * Content
+ */
 article p {
     justify-content: space-between;
     text-align: justify;
