@@ -10,7 +10,7 @@
         {
           "ligatures": "home, house",
           "name": "home",
-          "order": 0,
+          "order": 125,
           "id": 0,
           "prevSize": 32,
           "code": 59648,
@@ -23,7 +23,7 @@
           "id": 1,
           "prevSize": 32,
           "code": 59652,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "ligatures": "images, pictures",
@@ -824,7 +824,7 @@
           "id": 90,
           "prevSize": 32,
           "code": 60054,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "ligatures": "youtube, brand21",
@@ -833,7 +833,7 @@
           "id": 91,
           "prevSize": 32,
           "code": 60061,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "ligatures": "steam2, brand37",
@@ -842,7 +842,7 @@
           "id": 92,
           "prevSize": 32,
           "code": 60077,
-          "tempChar": ""
+          "tempChar": ""
         },
         {
           "ligatures": "github, brand40",
@@ -851,7 +851,7 @@
           "id": 93,
           "prevSize": 32,
           "code": 60080,
-          "tempChar": ""
+          "tempChar": ""
         }
       ],
       "id": 2,
@@ -23270,7 +23270,10 @@
       "color": 0,
       "bgColor": 16777215,
       "classSelector": ".icon",
-      "name": "icomoon"
+      "name": "icomoon",
+      "height": 32,
+      "columns": 16,
+      "margin": 16
     },
     "historySize": 50,
     "showCodes": true,

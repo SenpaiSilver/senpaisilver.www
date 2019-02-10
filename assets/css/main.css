@@ -12,10 +12,10 @@ a, a:active, a:visited {
 }
 main {
     border: 3px #f00 solid;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     padding: 10px;
-    margin: 20px 0px;
-    width: 100%;
+    margin: 20px 50px;
+    /* width: 100%; */
     display: block;
 }
 footer {
@@ -24,7 +24,13 @@ footer {
 /**
 *** Nav
 **/
+nav {
+    text-align: left;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 50px;
+}
 nav ul.menu {
+    float: right;
     list-style: none;
     padding: 0px;
     margin: 0px;
@@ -33,17 +39,33 @@ nav ul.menu {
     align-items: flex-start;
 }
 nav ul.menu li {
-    background: #f00;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0px 5px;
 }
 nav ul.menu li:hover {
-    background: #00f;
+    background: rgba(66, 66, 66, 0.7);
+}
+nav ul.menu li a {
+    transition: color .2s;
+}
+nav ul.menu li:hover a {
+    color: rgb(224, 56, 56);
+    transition: color .2s;
+}
+nav ul.menu li:first-child:hover {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+nav ul.menu li:last-child:hover {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 nav ul.menu li:last-child {
     border-bottom-right-radius: 10px;
 }
 nav a {
     text-decoration: none;
-    padding: 5px;
+    padding: 10px 5px;
     line-height: 32px;
 }
 /**

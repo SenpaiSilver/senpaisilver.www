@@ -30,6 +30,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon.home:before {
+  content: "\e900";
+}
+
 .icon.newspaper:before {
   content: "\e904";
 }

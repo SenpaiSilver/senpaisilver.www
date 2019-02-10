@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>SenpaiSilver</title>
+    <title>SenpaiSilver: Are you not entertained?</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,7 +12,13 @@
 </head>
 <body>
 <div id="particles-js"></div>
+
 <nav>
+    <a href="<?=base_url()?>" class="home">
+        <!-- <span class="icon home"></span> SenpaiSilver -->
+        SenpaiSilver
+    </a>
     <?php $this->load->view("base/menu"); ?>
 </nav>
+
 <main>
