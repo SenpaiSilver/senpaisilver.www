@@ -50,8 +50,8 @@ section.social ul.twitter .profile {
     width: 60px;
 }
 section.social ul.twitter .profile img {
-    width: 50px;
-    height: 50px;
+    max-width: 50px;
+    max-height: 50px;
     border-radius: 25px;
 }
 section.social ul.twitter .profile .link {

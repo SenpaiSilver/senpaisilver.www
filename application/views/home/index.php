@@ -12,15 +12,16 @@
     </section>
 
     <section class="social">
-        <div>Twitter</div>
+        <!-- <div>Twitter</div>
         <ul class="twitter">
             <?php
-            foreach ($timeline as $t)
+            if (isset($timeline)) foreach ($timeline as $t)
             {
                 $this->load->view("partials/twitter", $t);
             }
             ?>
-        </ul>
+        </ul> -->
+            <?php $this->load->view("partials/twitter_applet"); ?>
     </section>
 </div>
 <hr/>
