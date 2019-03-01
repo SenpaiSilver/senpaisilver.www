@@ -52,7 +52,7 @@ gulp.task('default', ['clean'], function () {
 
     runSequence(
         'sass',
-        'scripts',
+        'scripts'
     );
 });
 
