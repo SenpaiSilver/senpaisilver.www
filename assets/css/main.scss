@@ -2,9 +2,6 @@
     box-sizing: border-box;
 }
 
-@import	'icons';
-@import	'particles';
-
 body {
     background: #000;
     color: #fff;
@@ -166,3 +163,5 @@ section.social {
 
 @import	'responsive';
 // @import	'twitter';
+@import	'icons';
+@import	'particles';
