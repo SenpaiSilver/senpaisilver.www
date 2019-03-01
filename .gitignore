@@ -1,3 +1,5 @@
+!_*.scss
+assets/dist/
 
 # Created by https://www.gitignore.io/api/node,angular,bower,eclipse,intellij,java,windows,vim,linux,visualstudio,visualstudiocode,python
 

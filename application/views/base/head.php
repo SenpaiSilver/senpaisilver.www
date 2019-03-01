@@ -6,11 +6,22 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="/assets/css/fonts.css" rel="stylesheet"/>
-    <link href="/assets/css/particles.css" rel="stylesheet"/>
-    <link href="/assets/css/main.css" rel="stylesheet"/>
-    <link href="/assets/css/responsive.css" rel="stylesheet"/>
-    <link href="/assets/css/twitter.css" rel="stylesheet"/>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Lato|Major+Mono+Display|Merriweather|Montserrat|Noto+Serif+SC|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Sarabun|Source+Code+Pro');
+
+    @font-face {
+    font-family: 'senpaisilver-icons';
+    src:  url('../fonts/senpaisilver-icons.eot?xevsmz');
+    src:  url('../fonts/senpaisilver-icons.eot?xevsmz#iefix') format('embedded-opentype'),
+        url('../fonts/senpaisilver-icons.ttf?xevsmz') format('truetype'),
+        url('../fonts/senpaisilver-icons.woff?xevsmz') format('woff'),
+        url('../fonts/senpaisilver-icons.svg?xevsmz#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    }
+    </style>
+
+    <link href="/assets/dist/css/main.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="particles-js"></div>

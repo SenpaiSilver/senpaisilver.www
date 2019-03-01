@@ -1,0 +1,37 @@
+/*
+ * Fonts used:
+ * https://fonts.google.com/?selection.family=Lato|Major+Mono+Display|Merriweather|Montserrat|Noto+Serif+SC|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Sarabun|Source+Code+Pro
+ */
+// @import url('https://fonts.googleapis.com/css?family=Lato|Major+Mono+Display|Merriweather|Montserrat|Noto+Serif+SC|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Sarabun|Source+Code+Pro');
+
+// @font-face {
+//   font-family: 'senpaisilver-icons';
+//   src:  url('../fonts/senpaisilver-icons.eot?xevsmz');
+//   src:  url('../fonts/senpaisilver-icons.eot?xevsmz#iefix') format('embedded-opentype'),
+//     url('../fonts/senpaisilver-icons.ttf?xevsmz') format('truetype'),
+//     url('../fonts/senpaisilver-icons.woff?xevsmz') format('woff'),
+//     url('../fonts/senpaisilver-icons.svg?xevsmz#icomoon') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+.icon:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'senpaisilver-icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  /* line-height: 1; */
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+    .home:before      { content: "\e900"; }
+    .newspaper:before { content: "\e904"; }
+    .twitter:before   { content: "\ea96"; }
+    .youtube:before   { content: "\ea9d"; }
+    .steam:before     { content: "\eaad"; }
+    .github:before    { content: "\eab0"; }
+}

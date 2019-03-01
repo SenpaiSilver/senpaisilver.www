@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Source Code Pro', monospace;
+    margin: 0px;
+}
+
+a, a:active, a:visited {
+    color: #fff;
+}
+
+main {
+    /* border: 3px #f00 solid; */
+    /* border-radius: 15px; */
+    padding: 10px;
+    margin: 20px 50px;
+    /* width: 100%; */
+    display: block;
+}
+footer {
+    text-align: center;
+}
+hr {
+    clear: both;
+    border: 2px solid rgba(66, 66, 66, 0.0);
+    width: 66%;
+}
+.container {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container:after {
+    clear: both;
+}
+/**
+ * Nav
+ */
+nav {
+    text-align: left;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 60px;
+    position: sticky;
+    top: 0px;
+
+    ul.menu {
+        float: right;
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        display: flex;
+        align-items: flex-start;
+
+        li {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0px 5px;
+        }
+        li:hover {
+            background: rgba(66, 66, 66, 0.7);
+        }
+        li a {
+            transition: color .2s;
+        }
+        li:hover a {
+            color: rgb(224, 56, 56);
+        }
+        li:first-child:hover {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        li:last-child:hover {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        li:last-child {
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        li:first-child {
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+    }
+    a {
+        text-decoration: none;
+        padding: 10px 5px;
+        line-height: 32px;
+    }
+}
+/**
+ * Content
+ */
+article p {
+    justify-content: space-between;
+    text-align: justify;
+}
+/**
+ * Section
+ */
+
+section.blog,
+section.social {
+    padding: 5px;
+}
+section.blog {
+    width: 70%;
+    float: left;
+    max-width: 900px;
+
+    ul li {
+        padding: 10px 10px;
+        margin-top: 35px;
+        background-color: black;
+        background-position: 50% 25%;
+        background-size: cover;
+        box-shadow: inset 0 0 20px #000;
+        transition: box-shadow 0.3s;
+    }
+    ul li:hover {
+        box-shadow: inset 0 0 10px #000;
+    }
+    ul .readmore {
+        width: 100%;
+        text-align: right;
+        display: block;
+        text-decoration: none;
+    }
+    article p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    a.title,
+    ul .readmore a,
+    article {
+        background: rgba(0, 0, 0, 0.75);
+        padding: 2px 5px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    ul .readmore {
+        margin-top: 10px;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+section.blog ul,
+section.social ul.twitter {
+    padding: 0px;
+    list-style: none;
+}
+section.social {
+    width: 30%;
+    float: left;
+    max-width: 350px;
+}
+
+@import	'responsive';
+@import	'icons';
+@import	'particles';
+@import	'twitter';
