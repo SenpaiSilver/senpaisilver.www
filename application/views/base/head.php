@@ -1,9 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>SenpaiSilver: Are you not entertained?</title>
 
+    <meta name="description" content="Are you not entertained?"/>
+    <meta name="keywords" content="SenpaiSilver, Senpai, Silver, gaming, blog, code, tweets"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
