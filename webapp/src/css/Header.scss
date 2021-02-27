@@ -1,0 +1,22 @@
+header {
+    border: 2px solid red;
+    display: block;
+    padding: 5px;
+
+    font-family: source-code-pro, Menlo, Monaco, Consolas, monospace, 'Courier New';
+
+    nav {
+        display: inline-flex;
+        flex-grow: 1;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        padding: 0px;
+
+        li:nth-of-type(n+2) {
+            margin-left: 5px;
+        }
+    }
+}
