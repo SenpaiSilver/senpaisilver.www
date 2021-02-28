@@ -18,7 +18,7 @@ jobs:
       name: node/default
     steps:
       - attach_workspace:
-          at: my_workspace
+          at: ~/project/
       - node/install-packages:
           app-dir: ~/project/webapp
       - persist_to_workspace:
@@ -33,7 +33,7 @@ jobs:
       name: node/default
     steps:
       - attach_workspace:
-          at: my_workspace
+          at: ~/project/
       - node/install-packages
       - run:
           command: npm run build
