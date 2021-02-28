@@ -28,11 +28,12 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - pull_project
+      - pull_project:
+          name: pulled_project
       - test:
-        requires:
-          - pull_project
+          name: tested
+          requires:
+            - pulled_project
       - build:
-        requires:
-          - pull_project
-          - test
+          requires:
+            - tested
