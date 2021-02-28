@@ -1,5 +1,11 @@
 article {
     border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 10px;
+
+    max-width: 500px;
+    width: 30vw;
+    min-width: 385px;
 
     & > * {
         background-color: #000000AA;
@@ -8,19 +14,36 @@ article {
     h2 {
         margin-top: 0px;
         margin-bottom: 0px;
+
+        a {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 
     .content {
         overflow: hidden;
-        padding: 3px;
+        padding: 5px 5px;
+        height: 100%;
     }
 
-    &:nth-of-type(n+2)
-    {
-        margin-top: 10px;
-    }
+    // &:nth-of-type(n+2)
+    // {
+    //     margin-top: 10px;
+    // }
 
     a.more-link {
         display: block;
+    }
+}
+
+@media only screen and (max-width: 1099px) {
+    article {
+        max-width: unset;
+        width: 100%;
+        min-width: 320px;
+        margin-left: 0px;
     }
 }

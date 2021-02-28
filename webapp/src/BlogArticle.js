@@ -59,7 +59,7 @@ class BlogArticle extends React.Component {
 
         return (
             <article style={articleStyle}>
-                <div class="content">
+                <div className="content">
                     <h2><a href={this.item.link} dangerouslySetInnerHTML={{__html: this.item.title}}></a></h2>
                     <time dateTime={this.item.ctime}>📅{ctime}</time>
                     <div dangerouslySetInnerHTML={{__html: this.item.caption}}></div>

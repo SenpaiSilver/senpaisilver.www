@@ -1,5 +1,4 @@
 .sidebar {
-    // border-right: 2px solid red;
     width: 30%;
     max-width: 300px;
     height: 100vh;
@@ -20,15 +19,7 @@
     nav ul {
         list-style: none;
         padding-left: 5px;
-        // padding-left: 20px;
         margin: 0px;
-
-        li:before {
-            content: ">";
-            margin-right: 5px;
-            font-weight: bolder;
-            font-family: monospace;
-        }
 
         li a {
             text-decoration: none;
@@ -36,6 +27,38 @@
 
             &:hover {
                 color: #fa3333;
+            }
+
+            &:before {
+                content: ">";
+                margin-right: 5px;
+                font-weight: bolder;
+                font-family: monospace;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 899px) {
+    .sidebar {
+        width: 100%;
+        max-width: unset;
+        height: unset;
+        position: unset;
+        top: unset;
+        display: block;
+    }
+
+    .sidebar nav ul {
+        li {
+            display: inline-block;
+
+            a:before {
+                margin-right: 0px;
+            }
+
+            &:nth-of-type(n+2) {
+                margin-left: 5px;
             }
         }
     }
