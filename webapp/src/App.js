@@ -50,6 +50,9 @@ class App extends React.Component {
                 {this.state.error == null && this.state.items.map((item) => (
                     <BlogArticle key={item.id} item={item} />
                 ))}
+                {!this.state.isLoaded && <div className="loading">
+                    Loading...
+                </div>}
             </div>
         );
     }
