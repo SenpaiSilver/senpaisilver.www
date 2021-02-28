@@ -3,7 +3,7 @@ orbs:
   node: circleci/node@4.2.0
 jobs:
   test:
-    working_directory: ~/project/webapp
+    working_directory: ~/project
     executor:
       name: node/default
     steps:
