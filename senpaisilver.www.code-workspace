@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "/",
+			"path": ".",
+		},
+	],
+	"settings": {
+		"files.encoding": "utf8",
+		"files.eol": "\n",
+		"files.trimTrailingWhitespace": true,
+		"search.useIgnoreFiles": true,
+		"workbench.editor.labelFormat": "default",
+		"files.exclude": {
+			"**/.git": true,
+			"**/node_modules": true,
+		}
+	}
+}
