@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './css/Header.scss';
+import './css/Sidebar.scss';
 
-class Header extends React.Component {
+class Sidebar extends React.Component {
     constructor(props) {
         super(props);
         this.links = [
@@ -16,8 +16,8 @@ class Header extends React.Component {
 
     render() {
         return (
-            <header>
-                <a href="/">SenpaiSilver$~&gt;</a>
+            <div className="sidebar">
+                <a className="title" href="/">SenpaiSilver$~&gt;</a>
                 <nav>
                     <ul>
                         {this.links.map((item, index) => (
@@ -29,9 +29,9 @@ class Header extends React.Component {
                         ))}
                     </ul>
                 </nav>
-            </header>
+            </div>
         );
     }
 }
 
-export default Header;
+export default Sidebar;
