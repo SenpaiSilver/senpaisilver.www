@@ -1,0 +1,20 @@
+version: 2.1
+jobs:
+  install:
+    machine:
+      image: circleci/node@3.0.0
+    steps:
+      - run:
+        name: Install
+        command: |
+          cd webapp/
+          npm install
+  test:
+    machine:
+      image: circleci/node@3.0.0
+    steps:
+      - install
+      - run:
+        name: Tests
+        command: |
+          npm test
