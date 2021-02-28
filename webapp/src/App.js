@@ -12,7 +12,7 @@ class App extends React.Component {
             isLoaded: false,
             items: []
         };
-        this.endpoint = 'https://blog.senpaisilver.com/wp-json/wp/v2/posts';
+        this.endpoint = 'https://blog.senpaisilver.com/wp-json/wp/v2/posts?per_page=16';
     }
 
     componentDidMount() {
