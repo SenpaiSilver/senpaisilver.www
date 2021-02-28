@@ -8,13 +8,23 @@ jobs:
       name: node/default
     steps:
       - checkout
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - webapp
   test:
     working_directory: ~/project/webapp
     executor:
       name: node/default
     steps:
+      - attach_workspace:
+          at: my_workspace
       - node/install-packages:
           app-dir: ~/project/webapp
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - webapp
       - run:
           command: npm run test
   build:
@@ -22,6 +32,8 @@ jobs:
     executor:
       name: node/default
     steps:
+      - attach_workspace:
+          at: my_workspace
       - node/install-packages
       - run:
           command: npm run build
@@ -35,5 +47,6 @@ workflows:
           requires:
             - pulled_project
       - build:
+          name: built
           requires:
             - tested
