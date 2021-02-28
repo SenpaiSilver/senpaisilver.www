@@ -34,7 +34,6 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/project/
-      - node/install-packages
       - run:
           command: npm run build
 workflows:
