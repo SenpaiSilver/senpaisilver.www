@@ -17,7 +17,7 @@ class Sidebar extends React.Component {
     render() {
         return (
             <div className="sidebar">
-                <a className="title" href="/">SenpaiSilver$~&gt;</a>
+                <h1><a className="title" href="/">SenpaiSilver$~&gt;</a></h1>
                 <nav>
                     <ul>
                         {this.links.map((item, index) => (

@@ -1,0 +1,26 @@
+article {
+    border-radius: 3px;
+
+    & > * {
+        background-color: #000000AA;
+    }
+
+    h2 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .content {
+        overflow: hidden;
+        padding: 3px;
+    }
+
+    &:nth-of-type(n+2)
+    {
+        margin-top: 10px;
+    }
+
+    a.more-link {
+        display: block;
+    }
+}

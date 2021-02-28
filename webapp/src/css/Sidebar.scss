@@ -1,20 +1,25 @@
 .sidebar {
-    border-right: 2px solid red;
+    // border-right: 2px solid red;
     width: 30%;
     max-width: 300px;
     height: 100vh;
     position: sticky;
     top: 0px;
 
-    a.title {
+    h1 {
         font-size: 2em;
-        text-decoration: none;
         font-family: 'Share Tech Mono', monospace;
+        margin-top: 5px;
+        margin-bottom: 0px;
+
+        a.title {
+            text-decoration: none;
+        }
     }
 
     nav ul {
         list-style: none;
-        padding-left: 0px;
+        padding-left: 5px;
         // padding-left: 20px;
         margin: 0px;
 
@@ -33,11 +38,5 @@
                 color: #fa3333;
             }
         }
-        // li:before {
-        //     content: "/";
-        // }
-        // li:nth-of-type(n+2) {
-        //     margin-left: 5px;
-        // }
     }
 }
