@@ -1,20 +1,16 @@
-version: 2.1
+version: '2.1'
+orbs:
+  node: circleci/node@4.2.0
 jobs:
-  install:
-    machine:
-      image: circleci/node@3.0.0
-    steps:
-      - run:
-        name: Install
-        command: |
-          cd webapp/
-          npm install
   test:
-    machine:
-      image: circleci/node@3.0.0
+    executor:
+      name: node/default
     steps:
-      - install
+      - checkout
+      - node/install-packages
       - run:
-        name: Tests
-        command: |
-          npm test
+          command: npm run test
+workflows:
+  test_my_app:
+    jobs:
+      - test
