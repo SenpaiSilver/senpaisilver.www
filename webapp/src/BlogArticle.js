@@ -11,7 +11,7 @@ class BlogArticle extends React.Component {
             image: null
         };
         this.item = props.item;
-        this.endpoint = props.item.featuredmedia.length > 0 ? props.item.featuredmedia[0].href : null;
+        this.endpoint = props.item.featuredmedia !== undefined && props.item.featuredmedia.length > 0 ? props.item.featuredmedia[0].href : null;
     }
 
     componentDidMount() {
