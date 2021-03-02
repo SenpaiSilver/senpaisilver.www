@@ -7,6 +7,13 @@ This repository represents the home page of [SenpaiSilver.com](http://www.senpai
 
 Just run:
 
-	npm install -g gulp
-	npm install 
-	gulp prod
+	cd webapp/
+	
+	# For dev(ing
+	npm start
+	
+	# For building
+	npm run build
+	
+	# For testing
+	npm run test
