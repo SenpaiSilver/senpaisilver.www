@@ -8,7 +8,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            next: "https://blog.senpaisilver.com/wp-json/wp/v2/posts?per_page=6&page=1",
+            next: "https://blog.senpaisilver.com/wp-json/wp/v2/posts?per_page=16&page=1",
             infiniteScroll: false,
             error: null,
             isLoaded: false,
@@ -16,7 +16,6 @@ class App extends React.Component {
             prevY: 0,
             observing: false,
         };
-        this.endpoint = 'https://blog.senpaisilver.com/wp-json/wp/v2/posts?per_page=6&page=1';
     }
 
     getArticles(endpoint) {
@@ -82,7 +81,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        this.getArticles(this.endpoint);
+        this.getArticles(this.state.next);
 
         // To enabled infinite scrolling
         // this.observer = new IntersectionObserver(this.handleObserver.bind(this), {
