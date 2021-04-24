@@ -9,7 +9,7 @@ Just run:
 
 	cd webapp/
 	
-	# For dev(ing
+	# For deving
 	npm start
 	
 	# For building
