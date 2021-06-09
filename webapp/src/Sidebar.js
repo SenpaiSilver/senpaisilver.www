@@ -7,7 +7,7 @@ class Sidebar extends React.Component {
         super(props);
         this.links = [
             {"title": "Blog",    "href": "https://blog.senpaisilver.com"},
-            {"title": "Twitter", "href": "https://twitter.com/SenpaiSilve"},
+            {"title": "Twitter", "href": "https://twitter.com/SenpaiSilver"},
             {"title": "YouTube", "href": "https://youtube.com/SenpaiSilver"},
             {"title": "GitHub",  "href": "https://github.com/SenpaiSilver"},
             {"title": "Steam",   "href": "http://steamcommunity.com/id/senpaisilver/"},
