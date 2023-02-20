@@ -10,13 +10,13 @@ interface BlogRecentPostsProps {
 
 interface BlogRecentPostsResponse {
     id: number;
-    excerpt: {[rendered: string]: string};
-    title: {[rendered: string]: string};
+    excerpt: { [rendered: string]: string };
+    title: { [rendered: string]: string };
     link: string;
     _links: any;
     date_gmt: string;
     modified_gmt: string;
-    featuredmedia: Array<{[href: string]: string}>;
+    featuredmedia: Array<{ [href: string]: string }>;
 }
 
 export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecentPostsProps) {
@@ -28,15 +28,15 @@ export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecent
             const response = await fetch(build_endpoint());
             if (response.status < 400) {
                 setPosts((await response.json()).map((post: BlogRecentPostsResponse) => {
-                    const {id, link} = post;
+                    const { id, link } = post;
                     const featuredmedia = post._links["wp:featuredmedia"]
                     const excerpt = post.excerpt.rendered;
                     const title = post.title.rendered;
                     const ctime = post.date_gmt;
                     const mtime = post.modified_gmt;
                     const bgimage = post._links["wp:featuredmedia"][0].href;
-                return {id, title, excerpt, featuredmedia, link, bgimage, ctime, mtime};
-            }));
+                    return { id, title, excerpt, featuredmedia, link, bgimage, ctime, mtime };
+                }));
                 setIsLoading(false);
                 console.log(posts);
             }

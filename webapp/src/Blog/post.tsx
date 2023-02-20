@@ -12,7 +12,7 @@ interface BlogPostProps {
 
 interface FeaturedMediaResponse {
     id: number;
-    guid: {[rendered: string]: string};
+    guid: { [rendered: string]: string };
 }
 
 export function BlogPost({ link, title, excerpt, ctime, mtime, bgimage }: BlogPostProps) {
@@ -26,7 +26,8 @@ export function BlogPost({ link, title, excerpt, ctime, mtime, bgimage }: BlogPo
                 setArticleStyle({
                     backgroundImage: `url(${result.guid.rendered})`,
                     backgroundPositionY: "-1rem",
-                    ...articleStyle });
+                    ...articleStyle
+                });
             }
         };
         if (bgimage != undefined && bgimage !== "") {
