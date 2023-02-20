@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "./post.scss";
 
 interface BlogPostProps {
     link: string;
@@ -22,7 +23,10 @@ export function BlogPost({ link, title, excerpt, ctime, mtime, bgimage }: BlogPo
             const response = await fetch(endpoint);
             if (response.status < 400) {
                 const result: FeaturedMediaResponse = await response.json();
-                setArticleStyle({ backgroundImage: `url(${result.guid.rendered})`, ...articleStyle });
+                setArticleStyle({
+                    backgroundImage: `url(${result.guid.rendered})`,
+                    backgroundPositionY: "-1rem",
+                    ...articleStyle });
             }
         };
         if (bgimage != undefined && bgimage !== "") {
@@ -30,11 +34,11 @@ export function BlogPost({ link, title, excerpt, ctime, mtime, bgimage }: BlogPo
         }
     }, []);
 
-    return <article style={articleStyle}>
-        <div className="content">
-            <h2><a href={link}>{title}</a></h2>
+    return <article className="BlogPost" style={articleStyle}>
+        <a href={link}>
+            <h2 title={ctime}>{title}</h2>
             <time dateTime={ctime}>📅{ctime}</time>
-            <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
-        </div>
+            <div className="excerpt" dangerouslySetInnerHTML={{ __html: excerpt }}></div>
+        </a>
     </article>;
 }

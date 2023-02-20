@@ -1,0 +1,16 @@
+.BlogRecentPosts {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar-thumb {
+        background: #666;
+        border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #ddd;
+        border-radius: 20px;
+    }
+}

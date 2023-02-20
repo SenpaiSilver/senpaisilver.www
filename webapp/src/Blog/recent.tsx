@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BlogPost } from './post';
+import "./recent.scss";
 
 interface BlogRecentPostsProps {
     endpoint: string;
@@ -21,9 +22,6 @@ interface BlogRecentPostsResponse {
 export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecentPostsProps) {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [posts, setPosts] = useState<any>([]);
-
-    // if (per_page === undefined || per_page <= 0) per_page = 8;
-    // if (page === undefined || page <= 0) page = 1;
 
     useEffect(() => {
         const getPosts = async () => {
@@ -54,7 +52,9 @@ export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecent
         return `${endpoint}?${params}`;
     }
 
-    return (<>
+    if (isLoading) return <>Loading...</>;
+
+    return (<div className="BlogRecentPosts">
         {posts.map((post: any) => <BlogPost key={post.ctime} link={post.link} title={post.title} excerpt={post.excerpt} ctime={post.ctime} mtime={post.mtime} bgimage={post.bgimage} />)}
-    </>);
+    </div>);
 }
