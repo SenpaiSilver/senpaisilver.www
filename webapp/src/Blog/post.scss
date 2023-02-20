@@ -1,11 +1,13 @@
 article.BlogPost {
-    width: 450px;
+    width: 400px;
     height: 145px;
     margin: 10px 0px;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 10px;
     flex-shrink: 0;
     flex-grow: 0;
+    background-size: cover;
+    background-position-y: -1.5rem;
 
     &:not(:last-child) {
         margin-right: 10px;
@@ -13,7 +15,9 @@ article.BlogPost {
 
     h2 {
         font-size: 1.1em;
-        margin: 0px
+        margin: 0px;
+        overflow: hidden;
+        white-space: nowrap;
     }
 
     a {
@@ -24,5 +28,7 @@ article.BlogPost {
 
     .excerpt {
         text-overflow: ellipsis;
+        justify-content: space-between;
+        text-align: justify;
     }
 }

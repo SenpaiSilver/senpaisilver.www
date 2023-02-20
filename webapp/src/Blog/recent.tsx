@@ -52,7 +52,7 @@ export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecent
         return `${endpoint}?${params}`;
     }
 
-    if (isLoading) return <>Loading...</>;
+    if (isLoading) return <>Loading recent posts...</>;
 
     return (<div className="BlogRecentPosts">
         {posts.map((post: any) => <BlogPost key={post.ctime} link={post.link} title={post.title} excerpt={post.excerpt} ctime={post.ctime} mtime={post.mtime} bgimage={post.bgimage} />)}

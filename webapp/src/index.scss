@@ -14,9 +14,33 @@
     -webkit-text-size-adjust: 100%;
 }
 
+body {
+    margin: 0px 5px;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
 a {
     color: #FFFFFF;
     text-decoration: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: #242424;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
 }
 
 @media (prefers-color-scheme: light) {}
