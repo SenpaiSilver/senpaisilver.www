@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { BlogPost } from './post';
+import { useEffect, useState } from "react";
+import { BlogPost } from "./post";
 import "./recent.scss";
 
 interface BlogRecentPostsProps {
@@ -27,16 +27,27 @@ export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecent
         const getPosts = async () => {
             const response = await fetch(build_endpoint());
             if (response.status < 400) {
-                setPosts((await response.json()).map((post: BlogRecentPostsResponse) => {
-                    const { id, link } = post;
-                    const featuredmedia = post._links["wp:featuredmedia"]
-                    const excerpt = post.excerpt.rendered;
-                    const title = post.title.rendered;
-                    const ctime = post.date_gmt;
-                    const mtime = post.modified_gmt;
-                    const bgimage = post._links["wp:featuredmedia"][0].href;
-                    return { id, title, excerpt, featuredmedia, link, bgimage, ctime, mtime };
-                }));
+                setPosts(
+                    (await response.json()).map((post: BlogRecentPostsResponse) => {
+                        const { id, link } = post;
+                        const featuredmedia = post._links["wp:featuredmedia"];
+                        const excerpt = post.excerpt.rendered;
+                        const title = post.title.rendered;
+                        const ctime = post.date_gmt;
+                        const mtime = post.modified_gmt;
+                        const bgimage = post._links["wp:featuredmedia"][0].href;
+                        return {
+                            id,
+                            title,
+                            excerpt,
+                            featuredmedia,
+                            link,
+                            bgimage,
+                            ctime,
+                            mtime,
+                        };
+                    })
+                );
                 setIsLoading(false);
                 console.log(posts);
             }
@@ -48,13 +59,30 @@ export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecent
         const params = Object.entries({
             per_page: per_page,
             page: page,
-        }).map(([key, value]: [string, number | string]) => encodeURIComponent(key) + "=" + encodeURIComponent(value)).join("&");
+        })
+            .map(
+                ([key, value]: [string, number | string]) =>
+                    encodeURIComponent(key) + "=" + encodeURIComponent(value)
+            )
+            .join("&");
         return `${endpoint}?${params}`;
     }
 
-    if (isLoading) return <>Loading recent posts...</>;
+    if (isLoading) return <div className="BlogRecentPosts">Loading recent posts...</div>;
 
-    return (<div className="BlogRecentPosts">
-        {posts.map((post: any) => <BlogPost key={post.ctime} link={post.link} title={post.title} excerpt={post.excerpt} ctime={post.ctime} mtime={post.mtime} bgimage={post.bgimage} />)}
-    </div>);
+    return (
+        <div className="BlogRecentPosts">
+            {posts.map((post: any) => (
+                <BlogPost
+                    key={post.ctime}
+                    link={post.link}
+                    title={post.title}
+                    excerpt={post.excerpt}
+                    ctime={post.ctime}
+                    mtime={post.mtime}
+                    bgimage={post.bgimage}
+                />
+            ))}
+        </div>
+    );
 }
