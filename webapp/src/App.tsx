@@ -5,7 +5,9 @@ export default function App() {
     return (
         <>
             <Menu />
-            <Outlet />
+            <main>
+                <Outlet />
+            </main>
         </>
     );
 }

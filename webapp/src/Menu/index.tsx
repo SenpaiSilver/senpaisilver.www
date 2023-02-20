@@ -9,18 +9,18 @@ interface NavLink {
 
 export default function Menu() {
     const links: NavLink[] = [
-        { title: "About me", href: "aboutme" },
+        { title: "About me", href: "/" },
         { title: "Blog", href: "https://blog.senpaisilver.com" },
-        { title: "YouTube", href: "https://youtube.com/@SenpaiSilver" },
         { title: "Twitter", href: "https://twitter.com/SenpaiSilver" },
+        { title: "YouTube", href: "https://youtube.com/@SenpaiSilver" },
         { title: "Twitch", href: "https://twitch.tv/senpaisilver" },
-        { title: "GitHub", href: "https://github.com/SenpaiSilver" },
         { title: "Ko-fi", href: "https://ko-fi.com/senpaisilver" },
+        { title: "GitHub", href: "https://github.com/SenpaiSilver" },
     ];
 
     return <nav>
         {links.map((link) =>
-            <Link to={link.href}>{link.title}</Link>
+            <Link key={link.href} to={link.href}>{link.title}</Link>
         )}
     </nav>;
 }
