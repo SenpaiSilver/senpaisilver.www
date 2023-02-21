@@ -18,7 +18,7 @@ export default function Home() {
 
             <BlogRecentPosts
                 endpoint="https://blog.senpaisilver.com/wp-json/wp/v2/posts"
-                per_page={8}
+                per_page={9}
                 page={1}
             />
 
