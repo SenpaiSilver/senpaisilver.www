@@ -71,7 +71,7 @@ export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecent
     if (isLoading) return <div className="BlogRecentPosts">Loading recent posts...</div>;
 
     return (
-        <div className="BlogRecentPosts">
+        <div className="BlogRecentPosts OneLine">
             {posts.map((post: any) => (
                 <BlogPost
                     key={post.ctime}

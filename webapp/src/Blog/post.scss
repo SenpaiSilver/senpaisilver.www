@@ -13,6 +13,10 @@ article.BlogPost {
         margin-right: 10px;
     }
 
+    &:last-child {
+        margin-right: 35px;
+    }
+
     h2 {
         font-size: 1.1em;
         margin: 0px;

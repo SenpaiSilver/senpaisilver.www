@@ -1,11 +1,14 @@
 import BlogRecentPosts from "../Blog/recent";
+import ImgGreet from "../assets/Greet.png";
+import "./index.scss";
 
 export default function Home() {
     return (
         <>
             <h1>About me</h1>
 
-            <p>
+            <p className="relative">
+                {/* <img src={ImgGreet} className="greeting" /> */}
                 I'm SenpaiSilver, A.K.A. Silver, I do coding and enjoy anime, video games &amp;
                 japanese culture.
                 <br />I produce some content on YouTube (mostly in French) and write a blog (in
