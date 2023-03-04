@@ -59,3 +59,15 @@ export function BlogPost({ link, title, excerpt, ctime, mtime, bgimage }: BlogPo
         </article>
     );
 }
+
+export function LoadingBlogPost() {
+    return (
+        <article className="BlogPost Loading">
+            <div>
+                <h2>Loading...</h2>
+                <div className="placeholder-time"></div>
+                <div className="placeholder-excerpt"></div>
+            </div>
+        </article>
+    );
+}

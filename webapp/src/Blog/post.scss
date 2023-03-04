@@ -1,3 +1,5 @@
+$innerPadding: 5px;
+
 article.BlogPost {
     width: 400px;
     height: 145px;
@@ -27,7 +29,7 @@ article.BlogPost {
     a {
         background-color: rgba($color: #000000, $alpha: .8);
         display: block;
-        padding: 5px;
+        padding: $innerPadding;
     }
 
     .excerpt {
@@ -35,4 +37,31 @@ article.BlogPost {
         justify-content: space-between;
         text-align: justify;
     }
+}
+
+article.BlogPost.Loading {
+    background-color: #161616;
+
+    &>div {
+        padding: $innerPadding;
+    }
+
+    h2 {
+        margin-bottom: 5px;
+    }
+
+    .placeholder-time,
+    .placeholder-excerpt {
+        display: block;
+        background-color: #252525;
+        width: 100%;
+        height: 1.5em;
+        border-radius: 5px;
+    }
+
+    .placeholder-excerpt {
+        margin-top: 1em;
+        height: 4em;
+    }
+
 }
