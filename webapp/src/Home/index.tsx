@@ -1,6 +1,7 @@
 import BlogRecentPosts from "../Blog/recent";
 import ImgGreet from "../assets/Greet.png";
 import "./index.scss";
+import { Hardware } from "../Hardware";
 
 export default function Home() {
     return (
@@ -24,6 +25,10 @@ export default function Home() {
                 per_page={9}
                 page={1}
             />
+
+            <h2>Hardware</h2>
+
+            <Hardware />
 
             <h2>Hobbies</h2>
 
