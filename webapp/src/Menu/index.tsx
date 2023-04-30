@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./index.scss";
+import { LanguageSwitcher } from "../Language/Switcher";
+import { LanguageContext } from "../Language/locale";
 
 interface NavLink {
     title: string;
@@ -8,8 +10,10 @@ interface NavLink {
 }
 
 export default function Menu() {
+    const locale = useContext(LanguageContext);
+    const languages = { fr: "Français", en: "English" };
     const links: NavLink[] = [
-        { title: "About me", href: "/" },
+        { title: locale.translations("about_me"), href: "/" },
         { title: "Blog", href: "https://blog.senpaisilver.com" },
         { title: "Twitter", href: "https://twitter.com/SenpaiSilver" },
         { title: "YouTube", href: "https://youtube.com/@SenpaiSilver" },
@@ -18,9 +22,14 @@ export default function Menu() {
         { title: "GitHub", href: "https://github.com/SenpaiSilver" },
     ];
 
-    return <nav>
-        {links.map((link) =>
-            <Link key={link.href} to={link.href}>{link.title}</Link>
-        )}
-    </nav>;
+    return (
+        <nav>
+            {links.map((link) => (
+                <Link key={link.href} to={link.href}>
+                    {link.title}
+                </Link>
+            ))}
+            <LanguageSwitcher languages={languages} />
+        </nav>
+    );
 }

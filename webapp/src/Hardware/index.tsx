@@ -18,6 +18,7 @@ export function Hardware() {
             gpu: "NVidia RTX 3080Ti",
             ram: 64,
             os: "Windows 10 Pro",
+            case: "be quiet! Silent Base 802",
         },
         "Home Server": {
             format: "server",
@@ -25,6 +26,7 @@ export function Hardware() {
             gpu: "Radeon™ Graphics 7 cores",
             ram: 16,
             os: "Ubuntu",
+            case: "Antec P101",
         },
         Mobile: {
             format: "laptop",
@@ -37,14 +39,12 @@ export function Hardware() {
 
     return (
         <div className="Hardware">
-            {/* <ul> */}
             {Object.entries(machines).map(([machine_label, specs]) => (
-                <div>
+                <div key={machine_label}>
                     <h3>{machine_label}</h3>
                     <Machine machine={specs} />
                 </div>
             ))}
-            {/* </ul> */}
         </div>
     );
 }
@@ -68,6 +68,11 @@ function Machine({ machine }: MachineProps) {
             <li>
                 <label>OS:</label> <span>{machine.os}</span>
             </li>
+            {machine.case && (
+                <li>
+                    <label>Case:</label> <span>{machine.case}</span>
+                </li>
+            )}
         </ul>
     );
 }

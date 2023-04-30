@@ -2,11 +2,15 @@ import BlogRecentPosts from "../Blog/recent";
 import ImgGreet from "../assets/Greet.png";
 import "./index.scss";
 import { Hardware } from "../Hardware";
+import { LanguageContext } from "../Language/locale";
+import { useContext } from "react";
 
 export default function Home() {
+    const locale = useContext(LanguageContext);
+
     return (
         <>
-            <h1>About me</h1>
+            <h1>{locale.translations("about_me")}</h1>
 
             <p className="relative">
                 {/* <img src={ImgGreet} className="greeting" /> */}
@@ -18,7 +22,7 @@ export default function Home() {
 
             <p>I'm currently trying my hand at VTubing (in English and French).</p>
 
-            <h2>Recent blog posts</h2>
+            <h2>{locale.translations("recent_blog_post")}</h2>
 
             <BlogRecentPosts
                 endpoint="https://blog.senpaisilver.com/wp-json/wp/v2/posts"
@@ -26,11 +30,11 @@ export default function Home() {
                 page={1}
             />
 
-            <h2>Hardware</h2>
+            <h2>{locale.translations("hardware")}</h2>
 
             <Hardware />
 
-            <h2>Hobbies</h2>
+            <h2>{locale.translations("hobbies")}</h2>
 
             <ul>
                 <li>Anime;</li>
