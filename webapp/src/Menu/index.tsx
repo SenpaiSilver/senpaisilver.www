@@ -24,11 +24,13 @@ export default function Menu() {
 
     return (
         <nav>
-            {links.map((link) => (
-                <Link key={link.href} to={link.href}>
-                    {link.title}
-                </Link>
-            ))}
+            <div>
+                {links.map((link) => (
+                    <Link key={link.href} to={link.href}>
+                        {link.title}
+                    </Link>
+                ))}
+            </div>
             <LanguageSwitcher languages={languages} />
         </nav>
     );

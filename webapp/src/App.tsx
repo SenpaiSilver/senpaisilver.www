@@ -5,20 +5,22 @@ import { LanguageContext, Translation } from "./Language/locale";
 import { en_translations } from "./Language/en";
 import { fr_translations } from "./Language/fr";
 
+const translation_strings: Translation = { fr: fr_translations, en: en_translations };
 interface LanguageContextProps {
     language: string;
     translations: any;
     setLanguage: (lang: string) => void;
 }
 
-let detectedLanguage = localStorage.getItem("language");
+let detectedLanguage = (localStorage.getItem("language") || navigator.language || "en")
+    .split("-")
+    .at(0);
 
-if (!detectedLanguage) {
-    detectedLanguage = navigator.language.split("-").at(0) || "en";
+if (!(detectedLanguage! in translation_strings)) {
+    detectedLanguage = "en";
 }
 
 export default function App() {
-    const translation_strings: Translation = { fr: fr_translations, en: en_translations };
     const [currentLanguage, setCurrentLanguage] = useState<string>(detectedLanguage!);
     const [currentTranslations, setCurrentTranslations] = useState(
         translation_strings[detectedLanguage!]

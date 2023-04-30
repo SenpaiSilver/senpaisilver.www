@@ -13,7 +13,7 @@ export function LanguageSwitcher({ languages }: LanguageSwitcherProps) {
     }
 
     return (
-        <select defaultValue={language.language} onChange={onChange}>
+        <select className="LanguageSwitcher" defaultValue={language.language} onChange={onChange}>
             {Object.entries(languages).map(([code, lang]) => (
                 <option key={code} value={code}>
                     {lang}
