@@ -14,8 +14,6 @@ export default function Home() {
 
             <div className="relative">{locale.translations("AboutMePresentation")}</div>
 
-            <p>I'm currently trying my hand at VTubing (in English and French).</p>
-
             <h2>{locale.translations("recent_blog_post")}</h2>
 
             <BlogRecentPosts
