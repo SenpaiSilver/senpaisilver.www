@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { LanguageContext } from "./locale";
+import "./index.scss";
 
 interface LanguageSwitcherProps {
     languages: { [code: string]: string };
