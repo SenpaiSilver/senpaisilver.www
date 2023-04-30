@@ -12,14 +12,7 @@ export default function Home() {
         <>
             <h1>{locale.translations("about_me")}</h1>
 
-            <p className="relative">
-                {/* <img src={ImgGreet} className="greeting" /> */}
-                I'm SenpaiSilver, A.K.A. Silver, I do coding and enjoy anime, video games &amp;
-                japanese culture.
-                <br />I produce some content on YouTube (mostly in French) and write a blog (in
-                English) that I update a couple of times a year.
-            </p>
-            <p>{locale.translations("AboutMePresentation")}</p>
+            <div className="relative">{locale.translations("AboutMePresentation")}</div>
 
             <p>I'm currently trying my hand at VTubing (in English and French).</p>
 

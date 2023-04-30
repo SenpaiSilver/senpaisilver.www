@@ -7,18 +7,22 @@ export const fr_translations: { [code: string]: any } = {
     AboutMePresentation: (
         <>
             <p>
-                I, SenpaiSilver, the Weeb Otaku VTuber coding monkey, Senpai of all and kouhai to
-                none, am a big fan of giant robots that I could not pilot during my teens.
+                SenpaiSilver, le développeur VTuber Otaku Weeb, Senpai de tout le monde et passionné
+                par les robots géants que je n'ai jamais eu l'occasion de pilote lorsque j'étais
+                adolescent.
             </p>
             <p>
-                My content revolves around gaming, talking and gunpla/plamo (models). I also produce
-                videos such as reviews and essays in French so I can share passions, disappointment
-                and some deep thinking.
+                Le contenu de mes streams tourne autour du jeu vidéo, de la discussion et du
+                gunpla/plamo (modélisme).
+                <br />
+                Je produit aussi des vidéos pour partager mes avis à travers des critiques de jeux
+                et ma réflexion dans des essais vidéos.
             </p>
+
             <p>
-                I'm <GlitchedAge /> years old and my favorite color is none other than RED. I stream
-                mainly in French but do not hesitate to speak to me in English. I'm also able to
-                speak a bit of Japanese.
+                J'ai <GlitchedAge /> ans et ma couleur préférée est le rouge. Je stream
+                principalement en français, mais je peux aussi streamer en anglais et j'ai des bases
+                en japonais aussi.
             </p>
         </>
     ),

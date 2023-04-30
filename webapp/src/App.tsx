@@ -30,9 +30,9 @@ export default function App() {
                 translation_strings["en"][str] ||
                 "MISSING TRANSLATIONS OMG",
             setLanguage: (lang: string) => {
-                console.log("changing to:", lang);
                 setCurrentLanguage(lang);
                 setCurrentTranslations(translation_strings[lang]);
+                // localStorage.setItem("language", lang);
             },
         }),
         [{ translations: currentTranslations }]
