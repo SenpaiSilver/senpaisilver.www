@@ -19,6 +19,7 @@ export default function Home() {
                 <br />I produce some content on YouTube (mostly in French) and write a blog (in
                 English) that I update a couple of times a year.
             </p>
+            <p>{locale.translations("AboutMePresentation")}</p>
 
             <p>I'm currently trying my hand at VTubing (in English and French).</p>
 
