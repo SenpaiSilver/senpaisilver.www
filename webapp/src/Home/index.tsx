@@ -1,9 +1,10 @@
 import BlogRecentPosts from "../Blog/recent";
-import ImgGreet from "../assets/Greet.png";
+// import ImgGreet from "../assets/Greet.png";
 import "./index.scss";
 import { Hardware } from "../Hardware";
 import { LanguageContext } from "../Language/locale";
 import { useContext } from "react";
+import Icon from "../Utility/Icon";
 
 export default function Home() {
     const locale = useContext(LanguageContext);

@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 export interface Translation {
-    [code: string]: any;
+    [code: string]: string | JSX.Element;
 }
 
 export const translation_strings: Translation = {};

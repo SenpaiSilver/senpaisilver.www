@@ -1,6 +1,7 @@
 import GlitchedAge from "../Utility/GlitchedAge";
+import { Translation } from "./locale";
 
-export const en_translations: { [code: string]: any } = {
+export const en_translations: Translation = {
     about_me: "About me",
     recent_blog_post: "Recent blog posts",
     hardware: "Hardware",

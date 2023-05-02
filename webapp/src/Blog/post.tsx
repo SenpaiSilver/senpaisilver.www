@@ -52,7 +52,7 @@ export function BlogPost({ link, title, excerpt, ctime, mtime, bgimage }: BlogPo
     return (
         <article className="BlogPost" style={articleStyle}>
             <a href={link}>
-                <h2 title={ctime}>{title}</h2>
+                <h2 title={ctime} dangerouslySetInnerHTML={{ __html: title }}></h2>
                 <time dateTime={ctime}>📅{formatDate(ctime)}</time>
                 <div className="excerpt" dangerouslySetInnerHTML={{ __html: excerpt }}></div>
             </a>

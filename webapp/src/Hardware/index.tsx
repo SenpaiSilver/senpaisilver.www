@@ -7,6 +7,7 @@ interface ComputerHardware {
     ram: number;
     motherboard?: string;
     case?: string;
+    storage?: { model: string; storage: number }[];
     os: string;
 }
 
@@ -28,7 +29,7 @@ export function Hardware() {
             os: "Ubuntu",
             case: "Antec P101",
         },
-        Mobile: {
+        Laptop: {
             format: "laptop",
             cpu: "Apple M1 Pro 10 CPU cores",
             gpu: "Apple M1 Pro 16 GPU cores",

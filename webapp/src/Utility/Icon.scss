@@ -1,0 +1,14 @@
+.Icon {
+    &.inline {
+        display: inline-block;
+    }
+
+    &.block {
+        display: block;
+    }
+}
+
+img.Icon {
+    height: 1em;
+    max-width: 1em;
+}
