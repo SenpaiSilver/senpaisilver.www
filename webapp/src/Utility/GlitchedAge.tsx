@@ -1,13 +1,22 @@
 import { useEffect, useState } from "react";
 import "./GlitchedAge.scss";
+import { DateTime } from "luxon";
+
+const joined_youtube_since = DateTime.utc().diff(
+    DateTime.fromISO("2006-07-25T00:00:00Z"),
+    "years"
+).years;
 
 export default function GlitchedAge() {
-    const [age, setAge] = useState(77.7);
+    const [age, setAge] = useState(joined_youtube_since);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            let rand_age = Math.random() * 100;
-            setAge(rand_age > 100 ? rand_age - 100 : rand_age);
+            let rand_age = (Math.random() * 100) % 100;
+            if (rand_age <= joined_youtube_since) {
+                rand_age += joined_youtube_since;
+            }
+            setAge(rand_age);
         }, 666);
         return () => clearInterval(interval);
     }, []);
