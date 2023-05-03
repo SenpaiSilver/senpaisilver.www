@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { LanguageSwitcher } from "../Language/Switcher";
 import { LanguageContext } from "../Language/locale";
 import "./index.scss";
+import DiscordMembers from "../Discord/DiscordMembers";
 
 interface NavLink {
     title: string;
@@ -30,6 +31,7 @@ export default function Menu() {
                         {link.title}
                     </Link>
                 ))}
+                <DiscordMembers guild="521167506183028749" />
             </div>
             <LanguageSwitcher languages={languages} />
         </nav>

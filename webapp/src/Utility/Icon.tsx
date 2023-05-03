@@ -8,6 +8,7 @@ import laptop from "./icons/laptop.svg";
 import server from "./icons/server.svg";
 import blog from "./icons/blog.svg";
 import github from "./icons/github_white.svg";
+import user from "./icons/user.svg";
 
 const icons: { [key: string]: string } = {
     kofi: kofi_white,
@@ -19,6 +20,7 @@ const icons: { [key: string]: string } = {
     server: server,
     blog: blog,
     github: github,
+    user: user,
 };
 
 interface IconProps {
@@ -31,7 +33,8 @@ interface IconProps {
         | "server"
         | "twitter"
         | "twitch"
-        | "youtube";
+        | "youtube"
+        | "user";
     block?: boolean;
 }
 
