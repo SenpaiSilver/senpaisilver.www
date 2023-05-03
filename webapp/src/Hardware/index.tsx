@@ -1,6 +1,7 @@
+import { Machine } from "./Machine";
 import "./index.scss";
 
-interface ComputerHardware {
+export interface ComputerHardware {
     format: "desktop" | "laptop" | "server";
     cpu: string;
     gpu: string;
@@ -16,6 +17,7 @@ export function Hardware() {
         "BEEF PC": {
             format: "desktop",
             cpu: "AMD Ryzen 9 5900X",
+            motherboard: "Asus TUF GAMING X570-PRO",
             gpu: "NVidia RTX 3080Ti",
             ram: 64,
             os: "Windows 10 Pro",
@@ -24,6 +26,7 @@ export function Hardware() {
         "Home Server": {
             format: "server",
             cpu: "AMD Ryzen 5 5600G",
+            motherboard: "Asus TUF GAMING B550-PLUS",
             gpu: "Radeon™ Graphics 7 cores",
             ram: 16,
             os: "Ubuntu",
@@ -47,33 +50,5 @@ export function Hardware() {
                 </div>
             ))}
         </div>
-    );
-}
-
-interface MachineProps {
-    machine: ComputerHardware;
-}
-
-function Machine({ machine }: MachineProps) {
-    return (
-        <ul>
-            <li>
-                <label>CPU:</label> <span>{machine.cpu}</span>
-            </li>
-            <li>
-                <label>GPU:</label> <span>{machine.gpu}</span>
-            </li>
-            <li>
-                <label>RAM:</label> <span>{machine.ram}GB</span>
-            </li>
-            <li>
-                <label>OS:</label> <span>{machine.os}</span>
-            </li>
-            {machine.case && (
-                <li>
-                    <label>Case:</label> <span>{machine.case}</span>
-                </li>
-            )}
-        </ul>
     );
 }

@@ -4,7 +4,6 @@ import "./index.scss";
 import { Hardware } from "../Hardware";
 import { LanguageContext } from "../Language/locale";
 import { useContext } from "react";
-import Icon from "../Utility/Icon";
 
 export default function Home() {
     const locale = useContext(LanguageContext);

@@ -3,16 +3,35 @@ import kofi_white from "./icons/ko-fi_outline.svg";
 import twitter_white from "./icons/twitter_white.svg";
 import twitch_white from "./icons/twitch_white.svg";
 import youtube_white from "./icons/youtube_white.svg";
+import desktop from "./icons/desktop.svg";
+import laptop from "./icons/laptop.svg";
+import server from "./icons/server.svg";
+import blog from "./icons/blog.svg";
+import github from "./icons/github_white.svg";
 
 const icons: { [key: string]: string } = {
     kofi: kofi_white,
     twitter: twitter_white,
     twitch: twitch_white,
     youtube: youtube_white,
+    desktop: desktop,
+    laptop: laptop,
+    server: server,
+    blog: blog,
+    github: github,
 };
 
 interface IconProps {
-    icon: string;
+    icon:
+        | "blog"
+        | "desktop"
+        | "github"
+        | "kofi"
+        | "laptop"
+        | "server"
+        | "twitter"
+        | "twitch"
+        | "youtube";
     block?: boolean;
 }
 
@@ -23,5 +42,5 @@ export default function Icon({ icon, block }: IconProps) {
         return <div className="Icon block">Missing Icon for {icon}</div>;
     }
 
-    return <img className={`Icon ${style}`} src={icons[icon]} />;
+    return <img className={`Icon ${style} icon-${icon}`} src={icons[icon]} />;
 }
