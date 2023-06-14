@@ -1,8 +1,8 @@
 import { ReactNode, ReactPortal, createContext } from "react";
 
-export interface Translation {
+export type Translation = {
     [code: string]: ReactNode;
-}
+};
 
 export const translation_strings: Translation = {};
 

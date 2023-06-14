@@ -1,11 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Menu from "./Menu";
-import { useMemo, useState } from "react";
+import { ReactNode, useMemo, useState } from "react";
 import { LanguageContext, Translation } from "./Language/locale";
 import { en_translations } from "./Language/en";
 import { fr_translations } from "./Language/fr";
 
-const translation_strings: any = { fr: fr_translations, en: en_translations };
+let translation_strings: { [lang: string]: Translation } = {
+    fr: fr_translations,
+    en: en_translations,
+};
+
 interface LanguageContextProps {
     language: string;
     translations: any;
