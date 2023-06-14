@@ -5,7 +5,7 @@ import { LanguageContext, Translation } from "./Language/locale";
 import { en_translations } from "./Language/en";
 import { fr_translations } from "./Language/fr";
 
-const translation_strings: Translation = { fr: fr_translations, en: en_translations };
+const translation_strings: any = { fr: fr_translations, en: en_translations };
 interface LanguageContextProps {
     language: string;
     translations: any;
