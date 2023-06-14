@@ -6,7 +6,7 @@ interface DiscordWidgetProps {
 export default function DiscordWidget({ guild, theme }: DiscordWidgetProps) {
     return (
         <iframe
-            src={`https://discord.com/widget?id=${guild}&theme=${theme ? theme : "dark"}`}
+            src={`https://discord.com/widget?id=${guild}&theme=${theme || "dark"}`}
             width="350"
             height="500"
             allowTransparency={true}

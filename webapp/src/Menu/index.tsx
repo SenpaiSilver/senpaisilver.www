@@ -33,7 +33,9 @@ export default function Menu() {
                 ))}
                 <DiscordMembers guild="521167506183028749" />
             </div>
-            <LanguageSwitcher languages={languages} />
+            <div>
+                <LanguageSwitcher languages={languages} />
+            </div>
         </nav>
     );
 }

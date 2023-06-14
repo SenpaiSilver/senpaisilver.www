@@ -1,5 +1,3 @@
-// https://discord.com/api/guilds/521167506183028749/widget.json
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../Utility/Icon";
