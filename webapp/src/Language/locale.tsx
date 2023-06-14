@@ -1,7 +1,7 @@
-import { createContext } from "react";
+import { ReactNode, createContext } from "react";
 
 export interface Translation {
-    [code: string]: string | JSX.Element;
+    [code: string]: string | JSX.Element | ReactNode;
 }
 
 export const translation_strings: Translation = {};
