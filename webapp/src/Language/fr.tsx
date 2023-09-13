@@ -8,9 +8,8 @@ export const fr_translations: Translation = {
     AboutMePresentation: (
         <>
             <p>
-                SenpaiSilver, le développeur VTuber Otaku Weeb, Senpai de tout le monde et passionné
-                par les robots géants que je n'ai jamais eu l'occasion de pilote lorsque j'étais
-                adolescent.
+                SenpaiSilver, le développeur VTuber Otaku, Senpai de tous et passionné par les
+                robots géants que je n'ai jamais eu l'occasion de pilote lorsque j'étais adolescent.
             </p>
             <p>
                 Le contenu de mes streams tourne autour du jeu vidéo, de la discussion et du

@@ -9,8 +9,8 @@ export const en_translations: Translation = {
     AboutMePresentation: (
         <>
             <p>
-                I, SenpaiSilver, the Weeb Otaku VTuber coding monkey, Senpai of all and kouhai to
-                none, am a big fan of giant robots that I could not pilot during my teens.
+                I, SenpaiSilver, the Otaku VTuber coding monkey, Senpai of all and kouhai to none,
+                am a big fan of giant robots that I could not pilot during my teens.
             </p>
             <p>
                 My content revolves around gaming, talking and gunpla/plamo (models). I also produce
