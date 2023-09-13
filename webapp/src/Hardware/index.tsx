@@ -32,7 +32,7 @@ export function Hardware() {
             os: "Ubuntu",
             case: "Antec P101",
         },
-        Laptop: {
+        "MacBook Pro 2022": {
             format: "laptop",
             cpu: "Apple M1 Pro 10 CPU cores",
             gpu: "Apple M1 Pro 16 GPU cores",

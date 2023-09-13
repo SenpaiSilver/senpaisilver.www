@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { ReactNode, useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageSwitcher } from "../Language/Switcher";
 import { LanguageContext } from "../Language/locale";
 import "./index.scss";
 import DiscordMembers from "../Discord/DiscordMembers";
+import MenuIcon from "../assets/menu.svg";
 
 interface NavLink {
     title: string;
@@ -25,17 +26,35 @@ export default function Menu() {
 
     return (
         <nav>
-            <div>
+            <BurgerMenu>
                 {links.map((link) => (
                     <Link key={link.href} to={link.href}>
                         {link.title}
                     </Link>
                 ))}
+            </BurgerMenu>
+            <div className="utility">
                 <DiscordMembers guild="521167506183028749" />
-            </div>
-            <div>
-                <LanguageSwitcher languages={languages} />
+                <div id="language">
+                    <LanguageSwitcher languages={languages} />
+                </div>
             </div>
         </nav>
+    );
+}
+
+interface BurgerMenuProps {
+    children: ReactNode;
+}
+
+function BurgerMenu({ children }: BurgerMenuProps) {
+    return (
+        <div>
+            <label htmlFor="burger-menu" className="burgermenu">
+                <img src={MenuIcon} />
+            </label>
+            <input type="checkbox" id="burger-menu" className="burgermenu" />
+            <div id="links">{children}</div>
+        </div>
     );
 }
