@@ -20,10 +20,10 @@ export default function DiscordMembers({ guild }: DiscordMembersProps) {
         })();
     }, []);
 
-    if (!inviteLink) return <></>;
+    if (!inviteLink || !members) return <></>;
     return (
         <Link to={inviteLink}>
-            Discord {members}
+            Discord {members > 99 ? "99+" : members}
             <Icon icon="user" />
         </Link>
     );
