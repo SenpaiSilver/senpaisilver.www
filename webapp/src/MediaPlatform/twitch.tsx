@@ -9,7 +9,7 @@ interface YouTubeProps {
 
 export default function Twitch({ name, handle, image }: YouTubeProps) {
     return (
-        <Link className="SocialTwitch" to={`https://youtube.com/@${handle}`}>
+        <Link className="SocialTwitch" target="_blank" to={`https://youtube.com/@${handle}`}>
             <img className="channel-profile" src={image} />
             <h2>
                 <img className="icon" src={TwitchIcon} />
