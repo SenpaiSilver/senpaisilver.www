@@ -17,7 +17,7 @@ export default function Home() {
 
             <div className="relative">
                 <div className="desktop-60">{locale.translations("AboutMePresentation")}</div>
-                <img className="avatar" src={AssetCrossedArm} />
+                <img className="avatar" src={AssetCrossedArm} alt="Myself: SenpaiSilver" />
             </div>
 
             <h2>{locale.translations("recent_blog_post")}</h2>
