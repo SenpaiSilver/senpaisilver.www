@@ -12,7 +12,7 @@ export default function YouTube({ name, handle, image }: YouTubeProps) {
         <Link className="SocialYouTube" target="_blank" to={`https://youtube.com/@${handle}`}>
             <img className="channel-profile" src={image} alt={`${name} on YouTube`} />
             <h2>
-                <img className="icon" src={YouTubeIcon} />
+                <img alt="YouTube" className="icon" src={YouTubeIcon} />
                 {name}
             </h2>
         </Link>

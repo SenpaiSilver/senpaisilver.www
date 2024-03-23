@@ -12,7 +12,7 @@ export default function Twitch({ name, handle, image }: TwitchProps) {
         <Link className="SocialTwitch" target="_blank" to={`https://twitch.tv/${handle}`}>
             <img className="channel-profile" src={image} alt={`${name} on Twitch`} />
             <h2>
-                <img className="icon" src={TwitchIcon} />
+                <img alt="Twitch" className="icon" src={TwitchIcon} />
                 {name}
             </h2>
         </Link>
