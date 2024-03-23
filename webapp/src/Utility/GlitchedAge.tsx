@@ -3,7 +3,7 @@ import "./GlitchedAge.scss";
 import { DateTime } from "luxon";
 
 const joined_youtube_since = DateTime.utc().diff(
-    DateTime.fromISO("2006-07-25T00:00:00Z"),
+    DateTime.fromISO("2006-07-25T06:06:06Z"),
     "years"
 ).years;
 
@@ -17,7 +17,7 @@ export default function GlitchedAge() {
                 rand_age += joined_youtube_since;
             }
             setAge(rand_age);
-        }, 666);
+        }, 200);
         return () => clearInterval(interval);
     }, []);
 

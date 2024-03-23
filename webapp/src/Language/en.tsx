@@ -6,6 +6,11 @@ export const en_translations: Translation = {
     recent_blog_post: "Recent blog posts",
     hardware: "Hardware",
     hobbies: "Hobbies",
+    channels: "Channels",
+    channel_yt_main: "Main channel",
+    channel_yt_vod: "Stream archive",
+    channel_yt_clips: "Clips",
+    channel_tw_clips: "Live streaming",
     AboutMePresentation: (
         <>
             <p>

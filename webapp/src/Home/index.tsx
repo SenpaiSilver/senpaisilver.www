@@ -1,16 +1,18 @@
 import BlogRecentPosts from "../Blog/recent";
-// import ImgGreet from "../assets/Greet.png";
 import AssetCrossedArm from "../assets/crossedarms.png";
 import "./index.scss";
 import { Hardware } from "../Hardware";
 import { LanguageContext } from "../Language/locale";
 import { useContext } from "react";
+import Social from "../MediaPlatform";
 
 export default function Home() {
     const locale = useContext(LanguageContext);
 
     return (
         <>
+            <h1>{locale.translations("channels")}</h1>
+            <Social />
             <h1>{locale.translations("about_me")}</h1>
 
             <div className="relative">

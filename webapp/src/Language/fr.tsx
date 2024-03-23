@@ -5,6 +5,11 @@ export const fr_translations: Translation = {
     about_me: "A propos de moi",
     recent_blog_post: "Blog (anglais)",
     hobbies: "Loisirs",
+    channels: "Chaînes",
+    channel_yt_main: "Chaîne principale",
+    channel_yt_vod: "Archives de streams",
+    channel_yt_clips: "Clips",
+    channel_tw_clips: "Streaming",
     AboutMePresentation: (
         <>
             <p>
