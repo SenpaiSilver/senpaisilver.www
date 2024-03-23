@@ -3,7 +3,7 @@ import { Translation } from "./locale";
 
 export const fr_translations: Translation = {
     about_me: "A propos de moi",
-    recent_blog_post: "Billets récent",
+    recent_blog_post: "Blog (anglais)",
     hobbies: "Loisirs",
     AboutMePresentation: (
         <>

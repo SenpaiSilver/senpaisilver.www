@@ -7,7 +7,7 @@ import DiscordMembers from "../Discord/DiscordMembers";
 import MenuIcon from "../assets/menu.svg";
 
 interface NavLink {
-    title: string;
+    title: string | ReactNode;
     href: string;
 }
 
@@ -16,10 +16,10 @@ export default function Menu() {
     const languages = { fr: "Français", en: "English" };
     const links: NavLink[] = [
         // { title: locale.translations("about_me"), href: "/" },
-        { title: "Blog", href: "https://blog.senpaisilver.com" },
-        { title: "Twitter", href: "https://twitter.com/SenpaiSilver" },
-        { title: "YouTube", href: "https://youtube.com/@SenpaiSilver" },
         { title: "Twitch", href: "https://twitch.tv/senpaisilver" },
+        { title: "YouTube", href: "https://youtube.com/@SenpaiSilver" },
+        { title: "Twitter", href: "https://twitter.com/SenpaiSilver" },
+        { title: "Blog", href: "https://blog.senpaisilver.com" },
         { title: "Ko-Fi", href: "https://ko-fi.com/senpaisilver" },
         { title: "GitHub", href: "https://github.com/SenpaiSilver" },
     ];

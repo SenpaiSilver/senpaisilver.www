@@ -1,11 +1,18 @@
 :root {
+    --bg-color: #242424;
+    --text-color: #FFFFFF;
+
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
     color-scheme: light dark;
-    color: #FFFFFF;
-    background-color: #242424;
+    color: var(--text-color);
+    text-shadow: -1px 0 var(--bg-color),
+        0 1px var(--bg-color),
+        1px 0 var(--bg-color),
+        0 -1px var(--bg-color);
+    background-color: var(--bg-color);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -41,7 +48,7 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-    background: #242424;
+    background: #24242410;
     border-radius: 20px;
 }
 
