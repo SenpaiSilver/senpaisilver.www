@@ -2,7 +2,7 @@ $innerPadding: 5px;
 
 article.BlogPost {
     width: 400px;
-    height: 145px;
+    height: 155px;
     margin: 10px 0px;
     overflow: hidden;
     border-radius: 10px;
@@ -21,9 +21,11 @@ article.BlogPost {
 
     h2 {
         font-size: 1.1em;
-        margin: 0px;
+        margin: 0px 0px 5px;
         overflow: hidden;
         white-space: nowrap;
+        border-left: none;
+        padding: 5px;
     }
 
     a {

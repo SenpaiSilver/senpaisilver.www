@@ -37,6 +37,24 @@ main {
     max-width: 1280px;
 }
 
+h1 {
+    border-left: #666 6px solid;
+    padding: 0px 0px 0px 10px;
+    line-height: 1em;
+}
+
+h2 {
+    border-left: #666 3px solid;
+    padding: 0px 0px 0px 10px;
+    line-height: 1em;
+}
+
+h3 {
+    border-left: #666 3px dotted;
+    padding: 0px 0px 0px 10px;
+    line-height: 1em;
+}
+
 a {
     color: #FFFFFF;
     text-decoration: none;
