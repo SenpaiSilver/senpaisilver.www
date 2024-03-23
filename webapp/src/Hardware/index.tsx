@@ -37,7 +37,7 @@ export function Hardware() {
             cpu: "Apple M1 Pro 10 CPU cores",
             gpu: "Apple M1 Pro 16 GPU cores",
             ram: 16,
-            os: "Mac OS 13 Ventura",
+            os: "Mac OS 14 Sonoma",
         },
     };
 
