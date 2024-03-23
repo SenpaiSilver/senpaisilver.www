@@ -45,5 +45,5 @@ export default function Icon({ icon, block }: IconProps) {
         return <div className="Icon block">Missing Icon for {icon}</div>;
     }
 
-    return <img className={`Icon ${style} icon-${icon}`} src={icons[icon]} />;
+    return <img className={`Icon ${style} icon-${icon}`} alt={icon} src={icons[icon]} />;
 }

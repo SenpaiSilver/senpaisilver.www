@@ -51,7 +51,7 @@ function BurgerMenu({ children }: BurgerMenuProps) {
     return (
         <div>
             <label htmlFor="burger-menu" className="burgermenu">
-                <img src={MenuIcon} />
+                <img alt="Menu" src={MenuIcon} />
             </label>
             <input type="checkbox" id="burger-menu" className="burgermenu" />
             <div id="links">{children}</div>
