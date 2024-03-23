@@ -10,7 +10,7 @@ export const en_translations: Translation = {
     channel_yt_main: "Main channel",
     channel_yt_vod: "Stream archive",
     channel_yt_clips: "Clips",
-    channel_tw_clips: "Live streaming",
+    channel_tw_main: "Live streaming",
     AboutMePresentation: (
         <>
             <p>

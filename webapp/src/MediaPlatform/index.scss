@@ -3,12 +3,13 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+    overflow: hidden;
+    gap: 25px;
 
-    &.OneLine {
-        overflow-x: scroll;
-        flex-wrap: nowrap;
-        mask-image: linear-gradient(90deg, rgb(0, 0, 0) 97%, rgba(0, 0, 0, 0));
-        -webkit-mask-image: linear-gradient(90deg, rgb(0, 0, 0) 97%, rgba(0, 0, 0, 0));
+    @media (max-width: 800px) {
+        & {
+            justify-content: space-evenly;
+        }
     }
 
     h2 {
@@ -20,10 +21,15 @@
 .SocialTwitch,
 .SocialYouTube {
     display: block;
-    width: 400px;
-    height: 155px;
+    width: 150px;
+    height: 150px;
+    padding: 10px 0px;
+    margin: 0px 10px;
 
     h2 {
+        position: relative;
+        top: -30%;
+        text-align: center;
         font-size: 1.1em;
         margin: 0px 0px 5px;
         overflow: hidden;
@@ -31,11 +37,27 @@
         border-left: none;
         padding: 5px;
         z-index: 10;
+
+        background-color: var(--bg-color);
     }
 
-    img {
+    &:hover > img.channel-profile {
+        border: 3px solid rgb(36, 149, 255);
+    }
+
+    img.channel-profile {
+        border-radius: 150px;
         top: 0px;
-        position: absolute;
+        position: relative;
         z-index: 1;
+        width: inherit;
+        border: 3px solid transparent;
+    }
+
+    img.icon {
+        display: inline-block;
+        height: 1em;
+        vertical-align: bottom;
+        margin-right: 5px;
     }
 }

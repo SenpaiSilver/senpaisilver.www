@@ -5,11 +5,17 @@ import AssetYTVOD from "../assets/yt-vod.png";
 import { useContext } from "react";
 import { LanguageContext } from "../Language/locale";
 import "./index.scss";
+import Twitch from "./twitch";
 
 export default function Social() {
     const locale = useContext(LanguageContext);
     return (
-        <div className="MediaPlatform OneLine">
+        <div className="MediaPlatform">
+            <Twitch
+                name={locale.translations("channel_tw_main")}
+                handle="senpaisilver"
+                image={AssetYTMain}
+            />
             <YouTube
                 name={locale.translations("channel_yt_main")}
                 handle="SenpaiSilver"

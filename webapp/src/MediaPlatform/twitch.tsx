@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import YouTubeIcon from "../assets/youtube-color-icon.png";
+import TwitchIcon from "../assets/twitch-color-icon.png";
 
 interface YouTubeProps {
     name: string;
@@ -7,12 +7,12 @@ interface YouTubeProps {
     image: string;
 }
 
-export default function YouTube({ name, handle, image }: YouTubeProps) {
+export default function Twitch({ name, handle, image }: YouTubeProps) {
     return (
-        <Link className="SocialYouTube" to={`https://youtube.com/@${handle}`}>
+        <Link className="SocialTwitch" to={`https://youtube.com/@${handle}`}>
             <img className="channel-profile" src={image} />
             <h2>
-                <img className="icon" src={YouTubeIcon} />
+                <img className="icon" src={TwitchIcon} />
                 {name}
             </h2>
         </Link>
