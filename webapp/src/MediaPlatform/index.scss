@@ -21,19 +21,19 @@
 .SocialTwitch,
 .SocialYouTube {
     display: block;
-    width: 150px;
-    height: 150px;
-    padding: 10px 0px;
+    width: 200px;
+    height: 200px;
+    padding: 0px 0px 20px;
     margin: 0px 10px;
 
     h2 {
         position: relative;
-        top: -30%;
+        top: -20%;
         text-align: center;
         font-size: 1.1em;
         margin: 0px 0px 5px;
-        // overflow: hidden;
-        // white-space: nowrap;
+        overflow: hidden;
+        white-space: nowrap;
         border-left: none;
         padding: 5px;
         z-index: 10;
