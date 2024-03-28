@@ -1,4 +1,4 @@
-import { ReactNode, ReactPortal, createContext } from "react";
+import { ReactNode, createContext } from "react";
 
 export type Translation = {
     [code: string]: ReactNode;
