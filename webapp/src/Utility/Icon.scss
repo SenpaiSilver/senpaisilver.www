@@ -1,0 +1,15 @@
+.Icon {
+    &.inline {
+        display: inline-block;
+    }
+
+    &.block {
+        display: block;
+    }
+}
+
+img.Icon {
+    height: 0.9em;
+
+    // &.icon-desktop, &.icon-server, &.icon-laptop { fill: white}
+}
