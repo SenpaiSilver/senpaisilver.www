@@ -1,4 +1,8 @@
 !.vscode/settings.json
+!.vscode/launch.json
+backend/config/*
+!backend/config/config.defaults.yml
+!backend/config/__init__.py
 
 # Created by https://www.toptal.com/developers/gitignore/api/vim,windows,macos,vscode,python,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim,windows,macos,vscode,python,node
