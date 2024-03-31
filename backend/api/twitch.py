@@ -8,7 +8,8 @@ bp = Blueprint("twitch", __name__, url_prefix="/twitch")
 
 @bp.get("/status")
 def get_status():
-    client = TwitchClient()
+    client = TwitchClient("senpaisilver")
+    client = TwitchClient("senpaisilver")
     return "ok"
 
 
