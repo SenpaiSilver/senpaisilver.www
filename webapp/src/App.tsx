@@ -1,9 +1,11 @@
+import { useMemo, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Outlet } from "react-router-dom";
-import Menu from "./Menu";
-import { ReactNode, useMemo, useState } from "react";
-import { LanguageContext, Translation } from "./Language/locale";
 import { en_translations } from "./Language/en";
 import { fr_translations } from "./Language/fr";
+import { LanguageContext, Translation } from "./Language/locale";
+import Menu from "./Menu";
+import AppProvider from "./context";
 
 let translation_strings: { [lang: string]: Translation } = {
     fr: fr_translations,
@@ -45,15 +47,21 @@ export default function App() {
         }),
         [{ translations: currentTranslations }]
     );
+    const app_ctxt = useMemo(() => ({}), []);
 
     return (
-        <>
+        <AppProvider>
+            <Helmet prioritizeSeoTags>
+                <html lang={currentLanguage} />
+                <meta name="description" content="SenpaiSilver: VTuber, Otaku & Gunpla Addict" />
+                <link rel="canonical" href="https://senpaisilver.com/" />
+            </Helmet>
             <main>
                 <LanguageContext.Provider value={value as LanguageContextProps}>
                     <Menu />
                     <Outlet />
                 </LanguageContext.Provider>
             </main>
-        </>
+        </AppProvider>
     );
 }
