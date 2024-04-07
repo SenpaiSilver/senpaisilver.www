@@ -3,6 +3,7 @@
 backend/config/*
 !backend/config/config.defaults.yml
 !backend/config/__init__.py
+webapp/public/sitemap.xml
 
 # Created by https://www.toptal.com/developers/gitignore/api/vim,windows,macos,vscode,python,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim,windows,macos,vscode,python,node
