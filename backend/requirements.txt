@@ -2,3 +2,5 @@ Flask==3.0.2
 requests==2.31.0
 websockets==12.0
 pyyaml==6.0.1
+redis==5.0.4
+mongoengine==0.28.2

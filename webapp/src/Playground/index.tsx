@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AppContext } from "../context";
+import Twitch from "../Twitch";
 
 export default function Playground() {
     const useAppContext = useContext(AppContext);
@@ -11,6 +12,7 @@ export default function Playground() {
                 <title>P {useAppContext.title}</title>
             </Helmet>
             AAAAAAAAAAAAAAA
+            <Twitch />
         </>
     );
 }
