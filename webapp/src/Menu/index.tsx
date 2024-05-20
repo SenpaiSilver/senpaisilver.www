@@ -18,6 +18,7 @@ export default function Menu() {
         // { title: locale.translations("about_me"), href: "/" },
         { title: "Twitch", href: "https://twitch.tv/senpaisilver" },
         { title: "YouTube", href: "https://youtube.com/@SenpaiSilver" },
+        { title: "Bluesky", href: "https://bsky.app/profile/senpaisilver.bsky.social" },
         { title: "Twitter", href: "https://twitter.com/SenpaiSilver" },
         { title: "Blog", href: "https://blog.senpaisilver.com" },
         { title: "Ko-Fi", href: "https://ko-fi.com/senpaisilver" },
