@@ -22,7 +22,9 @@ class TwitchClient:
     def __init__(self, code=None, refresh_token=None):
         logger.setLevel(logging.DEBUG)
         self.code = code
-        self.refresh_token = refresh_token or session.get("twitch", {}).get("refresh_token")
+        self.refresh_token = refresh_token or session.get("twitch", {}).get(
+            "refresh_token"
+        )
         self.refresh(code)
 
     def refresh(self, code=None):
@@ -34,11 +36,20 @@ class TwitchClient:
         self.refresh_token = tokens.get("refresh_token")
         self.token_type = tokens.get("token_type")
 
-    def get(self, action, **kwargs):
-        return self._request(requests.get, action, **kwargs)
+    def get(self, action, with_pagination=False, **kwargs):
+        return self._request(
+            requests.get, action, with_pagination=with_pagination, **kwargs
+        )
 
-    def post(self, action, **kwargs):
-        return self._request(requests.post, action, **kwargs)
+    def post(self, action, with_pagination=False, **kwargs):
+        return self._request(
+            requests.post, action, with_pagination=with_pagination, **kwargs
+        )
+
+    def get_user(self, login):
+        user = self.get("users", login=login)
+        if user:
+            return user[0]
 
     @property
     def is_expired(self):
@@ -51,7 +62,7 @@ class TwitchClient:
             "Client-Id": self.client_id,
         }
 
-    def _request(self, method, action, **kwargs):
+    def _request(self, method, action, with_pagination=False, **kwargs):
         if self.is_expired:
             self.refresh()
         url = f"{self.base_url}/{action}"
@@ -68,13 +79,39 @@ class TwitchClient:
         response.raise_for_status()
         if "application/json" in response.headers.get("Content-Type"):
             response_json = response.json()
-            # meta = {"pagination": response_json.get("pagination"),
-            #         "total": response_json.get("total",
-            #                                    len(response_json["data"])),}
-            # if "data" in response_json:
-            #     response_json = response_json["data"]
-            # return response_json, meta
-            return response_json
+            data = response_json.get("data") or response_json
+            pagination = response_json.get("pagination", {})
+            if with_pagination:
+
+                def paginated(data, method, url, params, headers):
+                    pagination = data.get("pagination", {})
+                    while pagination.get("cursor"):
+                        yield data.get("data")
+                        logger.info(
+                            "%s %s (%d) in %.0fms",
+                            method.__name__.upper(),
+                            url,
+                            response.status_code,
+                            elapsed,
+                        )
+                        resp = method(
+                            url,
+                            params={"after": pagination["cursor"], **params},
+                            headers=headers,
+                        )
+                        resp.raise_for_status()
+                        data = resp.json()
+                        pagination = data.get("pagination", {})
+                    yield data.get("data")
+
+                return paginated(
+                    response_json,
+                    method,
+                    url,
+                    params=kwargs,
+                    headers=self.headers,
+                )
+            return data
         return response
 
     def _authenticate(self):
@@ -109,9 +146,7 @@ class TwitchClient:
             "token_type": access.get("token_type"),
         }
         if self.code:
-            session["twitch"] = {
-                "code": self.code, **tokens
-            }
+            session["twitch"] = {"code": self.code, **tokens}
         return tokens
 
 
