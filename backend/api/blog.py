@@ -1,5 +1,5 @@
 import requests
-from flask import Blueprint
+from flask import Blueprint, request
 
 
 bp = Blueprint("blog", __name__, url_prefix="/blog")
@@ -8,7 +8,13 @@ bp = Blueprint("blog", __name__, url_prefix="/blog")
 @bp.get("/recent")
 def get_status():
     recent_posts = []
-    resp = requests.get("https://blog.senpaisilver.com/wp-json/wp/v2/posts")
+    params = {
+        "page": request.args.get("page", 1),
+        "per_page": request.args.get("per_page", 16),
+    }
+    resp = requests.get(
+        "https://blog.senpaisilver.com/wp-json/wp/v2/posts", params=params
+    )
     resp.raise_for_status()
     for post in resp.json():
         recent_posts.append(
@@ -19,7 +25,9 @@ def get_status():
                 "excerpt": post["excerpt"]["rendered"],
                 "ctime": post["date_gmt"],
                 "mtime": post["modified_gmt"],
-                "bgimage": _get_thumbnail(post["_links"]["wp:featuredmedia"][0]["href"]),
+                "bg_image": _get_thumbnail(
+                    post["_links"]["wp:featuredmedia"][0]["href"]
+                ),
             }
         )
     return recent_posts

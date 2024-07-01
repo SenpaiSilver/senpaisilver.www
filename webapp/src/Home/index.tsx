@@ -22,11 +22,7 @@ export default function Home() {
 
             <h2>{locale.translations("recent_blog_post")}</h2>
 
-            <BlogRecentPosts
-                endpoint="https://blog.senpaisilver.com/wp-json/wp/v2/posts"
-                per_page={9}
-                page={1}
-            />
+            <BlogRecentPosts endpoint="/api/blog/recent" per_page={9} page={1} />
 
             <h2>{locale.translations("hardware")}</h2>
 

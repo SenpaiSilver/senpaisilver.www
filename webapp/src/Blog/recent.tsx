@@ -10,17 +10,26 @@ interface BlogRecentPostsProps {
 
 interface BlogRecentPostsResponse {
     id: number;
-    excerpt: { [rendered: string]: string };
-    title: { [rendered: string]: string };
+    excerpt: string;
+    title: string;
     link: string;
-    _links: any;
-    date_gmt: string;
-    modified_gmt: string;
-    featuredmedia: Array<{ [href: string]: string }>;
+    ctime: string;
+    mtime: string;
+    bg_image: string | null;
+}
+
+interface Post {
+    id: number;
+    title: string;
+    excerpt: string;
+    link: string;
+    bg_image: string;
+    ctime: string;
+    mtime: string;
 }
 
 export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecentPostsProps) {
-    const [posts, setPosts] = useState<any>([]);
+    const [posts, setPosts] = useState<Post[]>([]);
 
     useEffect(() => {
         const getPosts = async () => {
@@ -29,19 +38,18 @@ export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecent
                 setPosts(
                     (await response.json()).map((post: BlogRecentPostsResponse) => {
                         const { id, link } = post;
-                        const featuredmedia = post._links["wp:featuredmedia"];
-                        const excerpt = post.excerpt.rendered;
-                        const title = post.title.rendered;
-                        const ctime = post.date_gmt;
-                        const mtime = post.modified_gmt;
-                        const bgimage = post._links["wp:featuredmedia"][0].href;
+                        const excerpt = post.excerpt;
+                        const title = post.title;
+                        const ctime = post.ctime;
+                        const mtime = post.mtime;
+                        const bg_image = post.bg_image;
+                        console.log(post.bg_image);
                         return {
                             id,
                             title,
                             excerpt,
-                            featuredmedia,
                             link,
-                            bgimage,
+                            bg_image,
                             ctime,
                             mtime,
                         };
@@ -68,7 +76,7 @@ export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecent
     return (
         <div className="BlogRecentPosts OneLine">
             {!posts.length && <LoadingBlogPost />}
-            {posts.map((post: any) => (
+            {posts.map((post: Post) => (
                 <BlogPost
                     key={post.ctime}
                     link={post.link}
@@ -76,7 +84,7 @@ export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecent
                     excerpt={post.excerpt}
                     ctime={post.ctime}
                     mtime={post.mtime}
-                    bgimage={post.bgimage}
+                    bgimage={post.bg_image}
                 />
             ))}
         </div>
