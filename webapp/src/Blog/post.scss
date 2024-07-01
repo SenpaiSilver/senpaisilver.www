@@ -11,10 +11,6 @@ article.BlogPost {
     background-size: cover;
     background-position-y: -1.5rem;
 
-    &:not(:last-child) {
-        margin-right: 10px;
-    }
-
     &:last-child {
         margin-right: 35px;
     }
