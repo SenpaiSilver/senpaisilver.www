@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 
 class TwitchClient:
     base_url = "https://api.twitch.tv/helix"
+    token_url = "https://id.twitch.tv/oauth2/token"
     expiration = datetime.now()
     redirect_uri = None
     access_token = None
@@ -80,7 +81,6 @@ class TwitchClient:
         if "application/json" in response.headers.get("Content-Type"):
             response_json = response.json()
             data = response_json.get("data") or response_json
-            pagination = response_json.get("pagination", {})
             if with_pagination:
 
                 def paginated(data, method, url, params, headers):
@@ -132,7 +132,7 @@ class TwitchClient:
             params["code"] = self.code
             params["redirect_uri"] = conf.get("redirect_uri")
         response = requests.post(
-            "https://id.twitch.tv/oauth2/token", params=params
+            self.token_url, params=params
         )
         response.raise_for_status()
         access = response.json()
@@ -165,7 +165,7 @@ def oauth_url() -> str:
     # https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/#get-the-user-to-authorize-your-app
     # https://dev.twitch.tv/docs/authentication/scopes/
     conf = current_app.config.get("TWITCH")
-    scope = conf.get("scope")
+    scopes = conf.get("scopes")
     client_id = conf.get("client_id")
     redirect_uri = conf.get("redirect_uri")
     qs = parse.urlencode(
@@ -173,7 +173,7 @@ def oauth_url() -> str:
             "response_type": "code",
             "client_id": client_id,
             "redirect_uri": redirect_uri,
-            "scope": " ".join(scope),
+            "scopes": " ".join(scopes),
             # "force_verify": "true",
             # "state": "",
         }
