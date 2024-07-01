@@ -1,7 +1,6 @@
 from time import time
 from flask import current_app
 import requests
-from backend.client.oauth import OAuthClient
 
 import logging
 

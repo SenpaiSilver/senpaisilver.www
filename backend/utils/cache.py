@@ -1,6 +1,8 @@
 fakecache = {}
 
-def cache(key):
+DEFAULT_TTL=60
+
+def cache(key, ttl=DEFAULT_TTL):
     def decorator(func):
         def wrapper(*args, **kwargs):
             skey = f"{func.__module__}.{func.__name__}"
