@@ -11,32 +11,54 @@ export default function Home() {
 
     return (
         <>
-            <h1>{locale.translations("channels")}</h1>
-            <Social />
-            <h1>{locale.translations("about_me")}</h1>
+            <section>
+                <div>
+                    <h1>{locale.translations("channels")}</h1>
+                    <Social />
+                </div>
+            </section>
+            <section>
+                <div>
+                    <h1>{locale.translations("about_me")}</h1>
 
-            <div className="relative">
-                <div className="desktop-60">{locale.translations("AboutMePresentation")}</div>
-                <img className="avatar" src={AssetCrossedArm} alt="Myself: SenpaiSilver" />
-            </div>
+                    <div className="relative">
+                        <div className="desktop-60">
+                            {locale.translations("AboutMePresentation")}
+                        </div>
+                        <img className="avatar" src={AssetCrossedArm} alt="Myself: SenpaiSilver" />
+                    </div>
+                </div>
+            </section>
 
-            <h2>{locale.translations("recent_blog_post")}</h2>
+            <section>
+                <div>
+                    <h2>{locale.translations("recent_blog_post")}</h2>
 
-            <BlogRecentPosts endpoint="/api/blog/recent" per_page={9} page={1} />
+                    <BlogRecentPosts endpoint="/api/blog/recent" per_page={9} page={1} />
+                </div>
+            </section>
 
-            <h2>{locale.translations("hardware")}</h2>
+            <section>
+                <div>
+                    <h2>{locale.translations("hardware")}</h2>
 
-            <Hardware />
+                    <Hardware />
+                </div>
+            </section>
 
-            <h2>{locale.translations("hobbies")}</h2>
+            <section>
+                <div>
+                    <h2>{locale.translations("hobbies")}</h2>
 
-            <ul>
-                <li>Anime;</li>
-                <li>Video games;</li>
-                <li>Coding &amp; computers;</li>
-                <li>Gunpla;</li>
-                <li>Photography;</li>
-            </ul>
+                    <ul>
+                        <li>Anime;</li>
+                        <li>Video games;</li>
+                        <li>Coding &amp; computers;</li>
+                        <li>Gunpla;</li>
+                        <li>Photography;</li>
+                    </ul>
+                </div>
+            </section>
         </>
     );
 }

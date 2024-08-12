@@ -38,7 +38,7 @@ export default function App() {
             translations: (str: string) =>
                 currentTranslations[str] ||
                 translation_strings["en"][str] ||
-                "MISSING TRANSLATIONS OMG!!!!",
+                `<[Missing Translation Key: ${str}]>`,
             setLanguage: (lang: string) => {
                 setCurrentLanguage(lang);
                 setCurrentTranslations(translation_strings[lang]);
