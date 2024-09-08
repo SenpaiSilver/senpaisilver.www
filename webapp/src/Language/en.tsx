@@ -2,6 +2,7 @@ import GlitchedAge from "../Utility/GlitchedAge";
 import { Translation } from "./locale";
 
 export const en_translations: Translation = {
+    menu_clipping: "Clipping",
     about_me: "About me",
     recent_blog_post: "Recent blog posts",
     hardware: "Hardware",

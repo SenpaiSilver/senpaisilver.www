@@ -6,6 +6,7 @@ import App from "./App";
 import Home from "./Home";
 import "./index.scss";
 import Playground from "./Playground";
+import Clipping from "./Clipping";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                 <Routes>
                     <Route element={<App />}>
                         <Route path="/" element={<Home />} />
+                        <Route path="/clipping" element={<Clipping />} />
                         <Route path="/playground" element={<Playground />} />
                     </Route>
                 </Routes>
