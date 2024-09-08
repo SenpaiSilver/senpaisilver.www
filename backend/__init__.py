@@ -34,7 +34,7 @@ def create_app(test_config=None, debug=False):
     logger = logging.getLogger(__name__)
     logger.info("Got %d configuration keys", len(app.config.keys()))
     # connect_mongodb(app.config.get("MONGODB"))
-    connect_redis()
+    connect_redis(app.config.get("REDIS_URL", "redis://localhost:6379"))
 
     from . import api
 
@@ -47,7 +47,6 @@ def connect_mongodb(mongodb_conf):
     mongoengine.connect(host=mongodb_conf["host"])
 
 
-def connect_redis():
+def connect_redis(redis_conf):
     global REDIS
-    REDIS = redis.Redis.from_url(
-        os.getenv("REDIS_URL", "redis://localhost:6379"))
+    REDIS = redis.Redis.from_url(redis_conf)

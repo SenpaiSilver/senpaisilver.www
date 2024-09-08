@@ -9,7 +9,3 @@ services:
       - "./:/opt/backend"
     ports:
       - "127.0.0.1:9800:8000"
-    environment:
-      REDIS_URL: redis://172.18.0.1:6379
-    extra_hosts:
-      - "host.docker.internal:172.17.0.1"
