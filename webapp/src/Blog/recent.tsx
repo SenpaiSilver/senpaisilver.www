@@ -75,18 +75,25 @@ export default function BlogRecentPosts({ endpoint, per_page, page }: BlogRecent
 
     return (
         <div className="BlogRecentPosts OneLine">
-            {!posts.length && <LoadingBlogPost />}
-            {posts.map((post: Post) => (
-                <BlogPost
-                    key={post.ctime}
-                    link={post.link}
-                    title={post.title}
-                    excerpt={post.excerpt}
-                    ctime={post.ctime}
-                    mtime={post.mtime}
-                    bgimage={post.bg_image}
-                />
-            ))}
+            {!posts.length ? (
+                <>
+                    {[...Array(3)].map((_, index) => (
+                        <LoadingBlogPost key={index} />
+                    ))}
+                </>
+            ) : (
+                posts.map((post: Post) => (
+                    <BlogPost
+                        key={post.ctime}
+                        link={post.link}
+                        title={post.title}
+                        excerpt={post.excerpt}
+                        ctime={post.ctime}
+                        mtime={post.mtime}
+                        bgimage={post.bg_image}
+                    />
+                ))
+            )}
         </div>
     );
 }

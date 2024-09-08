@@ -1,19 +1,13 @@
 version: "3.2"
 services:
-  mongo:
-    image: mongo:7
-    container_name: senpaisilver_mongo
-    restart: always
+  senpaisilver_api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: senpaisilver_api
+    volumes:
+      - "./:/opt/backend"
+    ports:
+      - "127.0.0.1:9800:8000"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
-      MONGO_INITDB_DATABASE: senpaisilver_www
-    ports:
-      - 27017:27017
-  redis:
-    image: redis
-    container_name: senpaisilver_redis
-    ports:
-      - 6379:6379
-# networks:
-#   senpaisilver-www:
+      REDIS_URL: redis://host.docker.internal:6379

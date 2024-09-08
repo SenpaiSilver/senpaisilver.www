@@ -1,4 +1,5 @@
 import os
+import sys
 from flask import Flask
 import mongoengine
 import redis
@@ -33,7 +34,7 @@ def create_app(test_config=None, debug=False):
     logger = logging.getLogger(__name__)
     logger.info("Got %d configuration keys", len(app.config.keys()))
     # connect_mongodb(app.config.get("MONGODB"))
-    # connect_redis(app.config.get("REDIS"))
+    connect_redis()
 
     from . import api
 
@@ -46,7 +47,7 @@ def connect_mongodb(mongodb_conf):
     mongoengine.connect(host=mongodb_conf["host"])
 
 
-def connect_redis(redis_conf):
-    REDIS = redis.Redis(
-        host=redis_conf["host"], port=redis_conf["port"], db=redis_conf["db"]
-    )
+def connect_redis():
+    global REDIS
+    REDIS = redis.Redis.from_url(
+        os.getenv("REDIS_URL", "redis://localhost:6379"))
