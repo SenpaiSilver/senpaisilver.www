@@ -115,7 +115,7 @@ export const fr_translations: Translation = {
             </p>
             <ul>
                 <li>SenpaiSilver: https://twitch.tv/senpaisilver</li>
-                <li>Rettrouvez SenpaiSilver à https://twitch.tv/senpaisilver</li>
+                <li>Retrouvez SenpaiSilver à https://twitch.tv/senpaisilver</li>
                 <li>@SenpaiSilver https://youtube.com/@SenpaiSilver</li>
                 <li>Extrait de https://www.youtube.com/watch?v=U2uwQ716-QU par @SenpaiSilver</li>
             </ul>

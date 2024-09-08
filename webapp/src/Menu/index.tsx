@@ -15,7 +15,7 @@ export default function Menu() {
     const locale = useContext(LanguageContext);
     const languages = { fr: "Français", en: "English" };
     const links: NavLink[] = [
-        // { title: locale.translations("about_me"), href: "/" },
+        { title: locale.translations("about_me"), href: "/" },
         { title: locale.translations("menu_clipping"), href: "/clipping" },
         { title: "Twitch", href: "https://twitch.tv/senpaisilver" },
         { title: "YouTube", href: "https://youtube.com/@SenpaiSilver" },
