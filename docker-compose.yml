@@ -1,0 +1,16 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: senpaisilver_www
+    ports:
+      - 27017:27017
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - 6379:6379

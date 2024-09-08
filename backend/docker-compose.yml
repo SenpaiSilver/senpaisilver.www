@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+  senpaisilver_api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: senpaisilver_api
+    restart: unless-stopped
+    volumes:
+      - "./:/opt/backend"
+    ports:
+      - "127.0.0.1:9800:8000"
