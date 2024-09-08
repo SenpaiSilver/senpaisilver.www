@@ -2,6 +2,7 @@ import GlitchedAge from "../Utility/GlitchedAge";
 import { Translation } from "./locale";
 
 export const en_translations: Translation = {
+    menu_clipping: "Clipping",
     about_me: "About me",
     recent_blog_post: "Recent blog posts",
     hardware: "Hardware",
@@ -53,6 +54,83 @@ export const en_translations: Translation = {
             <p>
                 Starting 2024 I reworked my avatar's textures. I redid the face and eyes textures, I
                 reworked the clothing and the colors.
+            </p>
+        </>
+    ),
+    clipping_head_rules: "Rules regarding clipping",
+    clipping_p1: (
+        <p>
+            The content I provide through my streams and videos on my Twitch and YouTube channels
+            can be used within the guidelines set by fair use.
+            <br />
+            You are allowed to make clips from my streams and videos on Twitch and YouTube but you
+            must follow the following rules:
+        </p>
+    ),
+    clipping_rules: (
+        <ol>
+            <li>
+                Any form of generative AI is strictly forbidden. You are not allowed to use my
+                content for training AI or to use generative AI with my content.
+            </li>
+            <li>
+                You must not misrepresent anyone buy removing context and remixing a clip to make
+                anyone say things they did not say, even for satire purpose;
+            </li>
+            <li>You must credit me;</li>
+            <li>You may monetize clips you have made only through YouTube ads;</li>
+            <li>
+                You are not allowed to use my clips, image, voice and likeness to endorse or promote
+                a product or a service;
+            </li>
+            <li>Rules, terms &amp; conditions may change without prior notice.</li>
+        </ol>
+    ),
+    clipping_head_credit: "Crediting",
+    clipping_head_credit_how: "How?",
+    clipping_credit_how: (
+        <p>
+            You need to properly credit myself by linking my Twitch channel (
+            <code>https://twitch.tv/senpaisilver</code>) if you are clipping from my streams or from
+            an archived stream.
+            <br />
+            If you are clipping a video I made on YouTube please credit me with the link to my video
+            and by mentionning my name with an @.
+        </p>
+    ),
+    clipping_head_credit_where: "Where?",
+    clipping_credit_where: (
+        <>
+            <p>
+                Credit must be giving in the description of the clip as a direct link by clearly
+                mentionning my name and link such as:
+            </p>
+            <ul>
+                <li>SenpaiSilver: https://twitch.tv/senpaisilver</li>
+                <li>Checkout SenpaiSilver at https://twitch.tv/senpaisilver</li>
+                <li>@SenpaiSilver https://youtube.com/@SenpaiSilver</li>
+                <li>Clipped from https://www.youtube.com/watch?v=U2uwQ716-QU by @SenpaiSilver</li>
+            </ul>
+            <p>
+                Even if you add a hypertext link over my username you need to specify my link in
+                full text.
+                <br />
+                You may not use a link shortener to link or credit me.
+            </p>
+        </>
+    ),
+    clipping_head_monetization: "Monetization",
+    clipping_monetization: (
+        <>
+            <p>
+                You may monetize the clips you made only through YouTube ads. You are not allowed to
+                monetize my clips through crowfunding (such as Patreon, Ko-Fi...) or paywall my
+                clips.
+            </p>
+            <p>You are not allowed to use my clips within a sponsored video.</p>
+            <p>
+                You are not allowed to use my clips, image, voice and likeness to endorse or promote
+                a product or a service
             </p>
         </>
     ),
