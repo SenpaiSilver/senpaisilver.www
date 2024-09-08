@@ -1,6 +1,8 @@
-fakecache = {}
+import pickle
+from backend import REDIS
 
-DEFAULT_TTL=60
+DEFAULT_TTL = 60
+
 
 def cache(key, ttl=DEFAULT_TTL):
     def decorator(func):
@@ -8,19 +10,12 @@ def cache(key, ttl=DEFAULT_TTL):
             skey = f"{func.__module__}.{func.__name__}"
             if key:
                 skey += f":{key}"
-            if skey in fakecache:
-                print(f"We hit cache on {skey}")
-                return fakecache[skey]
+            if cached := REDIS.get(skey):
+                return pickle.loads(cached)
             call = func(*args, **kwargs)
-            fakecache[skey] = call
+            REDIS.set(skey, pickle.dumps(call), ex=ttl)
             return call
+
         return wrapper
+
     return decorator
-
-
-def store(key):
-    pass
-
-
-def purge(key):
-    pass
