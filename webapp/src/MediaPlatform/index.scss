@@ -62,3 +62,23 @@
         margin-right: 5px;
     }
 }
+
+.SocialTwitch {
+    anchor-name: --twitch-badge-link;
+
+    .live {
+        position: absolute;
+        top: calc(anchor(top) + 15px);
+        left: calc(anchor(left) + 15px);
+        position-anchor: --twitch-badge-link;
+        z-index: 2000;
+        transform: rotate(-45deg);
+        font-weight: 900;
+        color: red;
+        font-size: xx-large;
+        text-shadow: -1px 0 white,
+            0 1px white,
+            1px 0 white,
+            0 -1px white;
+    }
+}
