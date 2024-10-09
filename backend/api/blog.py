@@ -6,7 +6,7 @@ from backend import REDIS
 
 
 bp = Blueprint("blog", __name__, url_prefix="/blog")
-EXPIRE_RECENT = 60 * 3600
+EXPIRE_RECENT = 2 * 3600
 
 
 @bp.get("/recent")
@@ -17,7 +17,8 @@ def get_status():
         "per_page": min(max(int(request.args.get("per_page", "16")), 0), 100),
     }
     redis_key = "senpaisilver_blog_recent_" + ":".join(
-        str(v) for v in params.values())
+        str(v) for v in params.values()
+    )
     if cached := REDIS.get(redis_key):
         return pickle.loads(cached)
     resp = requests.get(
