@@ -16,3 +16,6 @@ deamon:
 
 stop:
 	docker compose down
+
+clean:
+	docker image prune -af
