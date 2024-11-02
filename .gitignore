@@ -6,6 +6,9 @@ backend/config/*
 !backend/config/__init__.py
 webapp/public/sitemap.xml
 client_secret_*
+temp/
+archive/
+google369a725c5af3a064.html
 
 # Created by https://www.toptal.com/developers/gitignore/api/vim,windows,macos,vscode,python,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim,windows,macos,vscode,python,node
