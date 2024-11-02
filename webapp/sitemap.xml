@@ -4,4 +4,8 @@
     <loc>https://senpaisilver.com/</loc>
     <lastmod>$TODAY</lastmod>
   </url>
+  <url>
+    <loc>https://senpaisilver.com/clipping</loc>
+    <lastmod>$TODAY</lastmod>
+  </url>
 </urlset>
