@@ -6,6 +6,7 @@ import { fr_translations } from "./Language/fr";
 import { LanguageContext, Translation } from "./Language/locale";
 import Menu from "./Menu";
 import AppProvider from "./context";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 let translation_strings: { [lang: string]: Translation } = {
     fr: fr_translations,
@@ -47,7 +48,7 @@ export default function App() {
         }),
         [{ translations: currentTranslations }]
     );
-    const app_ctxt = useMemo(() => ({}), []);
+    const queryClient = new QueryClient();
 
     return (
         <AppProvider>
@@ -56,12 +57,14 @@ export default function App() {
                 <meta name="description" content="SenpaiSilver: VTuber, Otaku & Gunpla Addict" />
                 <link rel="canonical" href="https://senpaisilver.com/" />
             </Helmet>
-            <main>
-                <LanguageContext.Provider value={value as LanguageContextProps}>
-                    <Menu />
-                    <Outlet />
-                </LanguageContext.Provider>
-            </main>
+            <QueryClientProvider client={queryClient}>
+                <main>
+                    <LanguageContext.Provider value={value as LanguageContextProps}>
+                        <Menu />
+                        <Outlet />
+                    </LanguageContext.Provider>
+                </main>
+            </QueryClientProvider>
         </AppProvider>
     );
 }
