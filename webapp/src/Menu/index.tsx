@@ -19,7 +19,7 @@ export default function Menu() {
         { title: locale.translations("menu_clipping"), href: "/clipping" },
         { title: "Twitch", href: "https://twitch.tv/senpaisilver" },
         { title: "YouTube", href: "https://youtube.com/@SenpaiSilver" },
-        { title: "Bluesky", href: "https://bsky.app/profile/senpaisilver.bsky.social" },
+        { title: "Bluesky", href: "https://bsky.app/profile/senpaisilver.com" },
         { title: "X (Twitter)", href: "https://x.com/SenpaiSilver" },
         { title: "Blog", href: "https://blog.senpaisilver.com" },
         { title: "Ko-Fi", href: "https://ko-fi.com/senpaisilver" },
