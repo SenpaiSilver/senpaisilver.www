@@ -5,10 +5,11 @@ from backend.utils.cache import cache
 
 
 bp = Blueprint("twitch", __name__, url_prefix="/twitch")
+EXPIRE_STATUS = 5 * 60
 
 
 @bp.get("/status")
-# @cache("twitch_status")
+@cache("twitch_status", EXPIRE_STATUS)
 def get_status():
     client = TwitchClient()
     user = client.get("users", login="senpaisilver")[0]
