@@ -32,12 +32,14 @@ Description=SenpaiSilver.www Backend
 After=network.target
 
 [Service]
-Type=forking
+Type=oneshot
+RemainAfterExit=yes
 User=senpaisilver
 Group=senpaisilver
 
-ExecStart=${START_SCRIPT_PATH}
-ExecStop=${STOP_SCRIPT_PATH}
+WorkingDirectory="$(pwd)"
+ExecStart=/usr/bin/docker compose up -d
+ExecStop=/usr/bin/docker compose down
 
 [Install]
 WantedBy=multi-user.target
@@ -47,4 +49,5 @@ chown root:root "${SERVICE}"
 chmod -v 770 "${START_SCRIPT_PATH}" "${STOP_SCRIPT_PATH}"
 ln -s "${SERVICE}" /etc/systemd/system/senpaisilver-www-backend.service
 chmod -v +x "${SERVICE}"
+sudo systemctl daemon-reload
 sudo systemctl enable senpaisilver-www-backend
