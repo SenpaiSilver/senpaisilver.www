@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: senpaisilver_api
     restart: unless-stopped
-    volumes:
-      - "./:/opt/backend"
+    #volumes:
+    #  - "./:/opt/backend"
     ports:
       - "127.0.0.1:9800:8000"

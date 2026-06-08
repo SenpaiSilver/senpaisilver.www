@@ -15,7 +15,7 @@ cat << EOF > "${START_SCRIPT_PATH}"
 #!/bin/bash
 
 cd "$(pwd)"
-docker compose up -D
+docker compose up -d
 EOF
 
 cat << EOF > "${STOP_SCRIPT_PATH}"
