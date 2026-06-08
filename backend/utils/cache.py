@@ -1,6 +1,7 @@
 fakecache = {}
 
-DEFAULT_TTL=60
+DEFAULT_TTL = 60
+
 
 def cache(key, ttl=DEFAULT_TTL):
     def decorator(func):
@@ -14,7 +15,9 @@ def cache(key, ttl=DEFAULT_TTL):
             call = func(*args, **kwargs)
             fakecache[skey] = call
             return call
+
         return wrapper
+
     return decorator
 
 

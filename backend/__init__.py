@@ -24,9 +24,9 @@ def create_app(test_config=None, debug=False):
 
     app.secret_key = app.config.get("SECRET_KEY")
     logging.basicConfig(
-        filename=os.path.join(app.config.get('LOGS'), "app.log"),
+        filename=os.path.join(app.config.get("LOGS"), "app.log"),
         filemode="a",
-        format="%(asctime)s,%(msecs)d %(name)s " "%(levelname)s %(message)s",
+        format="%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s",
         datefmt="%H:%M:%S",
         level=logging.DEBUG if debug else logging.INFO,
     )

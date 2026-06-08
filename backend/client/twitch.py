@@ -131,14 +131,10 @@ class TwitchClient:
             params["grant_type"] = "authorization_code"
             params["code"] = self.code
             params["redirect_uri"] = conf.get("redirect_uri")
-        response = requests.post(
-            self.token_url, params=params
-        )
+        response = requests.post(self.token_url, params=params)
         response.raise_for_status()
         access = response.json()
-        expiration = datetime.now() + timedelta(
-            seconds=access["expires_in"] - 1
-        )
+        expiration = datetime.now() + timedelta(seconds=access["expires_in"] - 1)
         tokens = {
             "expiration": expiration,
             "access_token": access.get("access_token"),

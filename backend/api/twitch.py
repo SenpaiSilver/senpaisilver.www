@@ -13,9 +13,7 @@ def get_status():
     client = TwitchClient()
     user = client.get("users", login="senpaisilver")[0]
     broadcaster = client.get("channels", broadcaster_id=user["id"])[0]
-    stream = next(
-        iter(client.get("streams", user_id=user["id"]).get("data", [])), {}
-    )
+    stream = next(iter(client.get("streams", user_id=user["id"]).get("data", [])), {})
     broadcaster["stream"] = {
         "is_live": stream.get("type") == "live",
         "viewer_count": stream.get("viewer_count", 0),

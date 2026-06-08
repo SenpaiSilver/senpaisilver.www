@@ -16,8 +16,7 @@ def get_status():
         "page": max(int(request.args.get("page", "1")), 1),
         "per_page": min(max(int(request.args.get("per_page", "16")), 0), 100),
     }
-    redis_key = "senpaisilver_blog_recent_" + ":".join(
-        str(v) for v in params.values())
+    redis_key = "senpaisilver_blog_recent_" + ":".join(str(v) for v in params.values())
     if cached := REDIS.get(redis_key):
         return pickle.loads(cached)
     resp = requests.get(
@@ -25,19 +24,18 @@ def get_status():
     )
     resp.raise_for_status()
     for post in resp.json():
-        recent_posts.append(
-            {
-                "id": post["id"],
-                "link": post["link"],
-                "title": post["title"]["rendered"],
-                "excerpt": post["excerpt"]["rendered"],
-                "ctime": post["date_gmt"],
-                "mtime": post["modified_gmt"],
-                "bg_image": _get_thumbnail(
-                    post["_links"]["wp:featuredmedia"][0]["href"]
-                ),
-            }
-        )
+        row = {
+            "id": post["id"],
+            "link": post["link"],
+            "title": post["title"]["rendered"],
+            "excerpt": post["excerpt"]["rendered"],
+            "ctime": post["date_gmt"],
+            "mtime": post["modified_gmt"],
+        }
+        if post["_links"].get("wp:featuredmedia"):
+            thumbnail = _get_thumbnail(post["_links"]["wp:featuredmedia"][0]["href"])
+            row["bg_image"] = thumbnail
+        recent_posts.append(row)
     REDIS.set(redis_key, pickle.dumps(recent_posts), ex=EXPIRE_RECENT)
     return recent_posts
 

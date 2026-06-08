@@ -10,5 +10,7 @@ EXPOSE 8000
 
 ENV PYTHONUNBUFFERED=1
 
+USER 1000:1000
+
 WORKDIR /opt
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "backend.app:app"]
